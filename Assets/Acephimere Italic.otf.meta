@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 6bf9e88001e68ea4983b2fae6d341b54
+timeCreated: 1479510332
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Acephimere
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: dbddb8e58a1e0564cbc03b35bac68e93, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
