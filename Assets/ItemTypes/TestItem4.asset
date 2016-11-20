@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: TestItem4
   m_EditorClassIdentifier: 
   Name: What
-  Image: {fileID: 0}
+  Image: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}

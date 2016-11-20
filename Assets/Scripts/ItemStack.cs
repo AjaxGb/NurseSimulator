@@ -10,7 +10,7 @@ public class ItemStack : MonoBehaviour {
 		private set {
 			Start();
 			_itemType = value;
-			_uiImage.texture = _itemType.Image;
+			_uiImage.sprite = _itemType.Image;
 			_uiName.text = value.Name;
 		}
 	}
@@ -33,11 +33,11 @@ public class ItemStack : MonoBehaviour {
 
 	private bool initialized = false;
 	private Text _uiName, _uiMult;
-	private RawImage _uiImage;
+	private Image _uiImage;
 	
 	void Start() {
 		if (!initialized) {
-			_uiImage = GetComponentInChildren<RawImage>();
+			_uiImage = GetComponentInChildren<Image>();
 			Text[] texts = GetComponentsInChildren<Text>();
 			_uiName = texts.First(t => t.name == "Name");
 			_uiMult = texts.First(t => t.name == "Multiplier");

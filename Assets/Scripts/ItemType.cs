@@ -1,10 +1,9 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu]
 public class ItemType : ScriptableObject {
 	public string Name;
-	public Texture Image;
+	public Sprite Image;
 
 	public override bool Equals(object obj) {
 		if (obj == null || GetType() != obj.GetType()) {

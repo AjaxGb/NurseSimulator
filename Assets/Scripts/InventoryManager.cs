@@ -6,7 +6,7 @@ public class InventoryManager : MonoBehaviour {
 	public static InventoryManager inst;
 
 	public ItemStack itemPrefab;
-	public ItemType[] test;
+	//public ItemType[] test;
 
 	private Dictionary<ItemType, ItemStack> items;
 	
@@ -19,16 +19,16 @@ public class InventoryManager : MonoBehaviour {
 		items = new Dictionary<ItemType, ItemStack>();
 	}
 
-	void Update() {
-		if (test.Length != 0) {
-			if (Input.GetMouseButtonDown(0)) {
-				AddItem(test[Random.Range(0, test.Length)]);
-			}
-			if (Input.GetMouseButtonDown(1)) {
-				RemoveItem(test[Random.Range(0, test.Length)]);
-			}
-		}
-	}
+	//void Update() {
+	//	if (test.Length != 0) {
+	//		if (Input.GetMouseButtonDown(0)) {
+	//			AddItem(test[Random.Range(0, test.Length)]);
+	//		}
+	//		if (Input.GetMouseButtonDown(1)) {
+	//			RemoveItem(test[Random.Range(0, test.Length)]);
+	//		}
+	//	}
+	//}
 
 	public ItemStack GetItem(ItemType itemType) {
 		ItemStack stack = null;

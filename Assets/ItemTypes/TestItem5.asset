@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: TestItem5
   m_EditorClassIdentifier: 
   Name: One more
-  Image: {fileID: 10906, guid: 0000000000000000f000000000000000, type: 0}
+  Image: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
