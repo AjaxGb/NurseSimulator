@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-public class ItemSource : MonoBehaviour {
+public class ItemSource : MonoBehaviour, IMouseOverUI {
 
 	public ItemType itemType;
 	public bool infiniteSource;
@@ -13,5 +14,17 @@ public class ItemSource : MonoBehaviour {
 				amountLeft--;
 			}
 		}
+	}
+
+	public void ShowUI(GameObject parent, float x, float y) {
+		
+	}
+
+	public void UpdateUI(float x, float y) {
+		throw new NotImplementedException();
+	}
+
+	public void HideUI() {
+		throw new NotImplementedException();
 	}
 }
