@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour {
 
-	public static InventoryManager inst;
+	public static InventoryManager inst { get; private set; }
 
 	public ItemStack itemPrefab;
 	//public ItemType[] test;
