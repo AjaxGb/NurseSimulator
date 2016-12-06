@@ -1,0 +1,35 @@
+{
+	"spawns": [
+		{
+			"id": "John Somebody",
+			"delay": {
+				"seconds": 4.4
+			},
+			"patient": {
+				"name": "John Somebody",
+				"gender": "male",
+				"color": {
+					"r": 1.0
+				}
+			}
+		},
+		{
+			"after": [
+				{
+					"event_id": "John Somebody",
+					"has": "ended"
+				}
+			],
+			"delay": {
+				"seconds": 2.4
+			},
+			"patient": {
+				"name": "Alice",
+				"gender": "female",
+				"color": {
+					"g": 1.0
+				}
+			}
+		}
+	]
+}

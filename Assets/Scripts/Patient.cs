@@ -27,6 +27,7 @@ public class PatientData : ISerializationCallbackReceiver {
 public class Patient : MonoBehaviour, IDespawnEvents {
 
 	public PatientData data { get; private set; }
+	private NavMeshAgent navAgent;
 
 	private ICollection<Action> _despawnActions = new List<Action>();
 	public void AddDespawnAction(Action a) {
@@ -39,11 +40,12 @@ public class Patient : MonoBehaviour, IDespawnEvents {
 	// NOT Start(), this is called manually on spawn
 	public void Setup(PatientData data) {
 		this.data = data;
+		navAgent = GetComponent<NavMeshAgent>();
 	}
 
 	// Update is called once per frame
 	void Update () {
-		
+		navAgent.destination = Player.inst.transform.position;
 	}
 
 	void OnDestroy() {
