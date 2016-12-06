@@ -6,7 +6,7 @@ public enum Gender { male, female } // FOR THE PURPOSES OF THIS PROJECT
 
 [Serializable]
 public class PatientData : ISerializationCallbackReceiver {
-	public string name;
+    public string name;
 	public string gender;
     public string condition;
     public float deathChance;
@@ -27,9 +27,12 @@ public class PatientData : ISerializationCallbackReceiver {
 	}
 }
 
-public class Patient : MonoBehaviour, IDespawnEvents {
+public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
+    public ItemStack popupPrefab;
 
-	public PatientData data { get; private set; }
+    private ItemStack currPopup;
+
+    public PatientData data { get; private set; }
 	private NavMeshAgent navAgent;
 
 	private ICollection<Action> _despawnActions = new List<Action>();
@@ -55,4 +58,59 @@ public class Patient : MonoBehaviour, IDespawnEvents {
 		// Move this if we do not destroy patients after they are done;
 		foreach (Action a in _despawnActions) a();
 	}
+
+    void ShowUI(Transform parent, Camera camera)
+    {
+        if (currPopup != null)
+        {
+            HideUI();
+        }
+        if (popupPrefab != null)
+        {
+            currPopup = Instantiate(popupPrefab);
+            currPopup.transform.SetParent(parent);
+        }
+    }
+
+    private void HideUI()
+    {
+        if (currPopup != null)
+        {
+            Destroy(currPopup.gameObject);
+        }
+    }
+
+    void IMouseOverUI.UpdateUI(Camera camera, Vector3 point)
+    {
+        throw new NotImplementedException();
+    }
+
+    void IMouseOverUI.HideUI()
+    {
+        if (currPopup != null)
+        {
+            Destroy(currPopup.gameObject);
+        }
+    }
+
+    void IMouseOverUI.OnClick(int button)
+    {
+        throw new NotImplementedException();
+    }
+
+    void IMouseOverUI.ShowUI(Transform parent, Camera camera)
+    {
+        if (currPopup != null)
+        {
+            HideUI();
+        }
+        if (popupPrefab != null)
+        {
+            currPopup = Instantiate(popupPrefab);
+            currPopup.transform.SetParent(parent);
+        }
+    }
 }
+
+   
+
