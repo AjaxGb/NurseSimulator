@@ -18,7 +18,10 @@ public class CheckAvailable : MonoBehaviour, IMouseOverUI {
             Text t = currPopup.GetComponentInChildren<Text>();
             if (value)
             {
-                t.text = "In Use";
+                t.text = "Requires Materials!\n";
+                foreach (ItemType item in guy.data.RequiredItems) {
+                    t.text += item.Name + "\n";
+                }
                 t.color = new Color(1, 0, 0);
             } else
             {
