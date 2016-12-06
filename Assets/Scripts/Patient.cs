@@ -8,6 +8,9 @@ public enum Gender { male, female } // FOR THE PURPOSES OF THIS PROJECT
 public class PatientData : ISerializationCallbackReceiver {
 	public string name;
 	public string gender;
+    public string condition;
+    public float deathChance;
+    public ItemType[] RequiredItems;
 	public Color color;
 
 	[NonSerialized]
