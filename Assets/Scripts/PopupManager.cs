@@ -37,12 +37,19 @@ public class PopupManager : MonoBehaviour {
 			cam.ScreenPointToRay(Input.mousePosition);
 
 		RaycastHit info;
-		if (Physics.Raycast(ray, out info, maxDistance, layerMask)) {
+		if (Physics.Raycast(ray, out info, maxDistance) && layerMask.Contains(info.transform.gameObject.layer)) {
 			IMouseOverUI foundMouseOver = info.transform.GetComponent<IMouseOverUI>();
 			if (foundMouseOver != currMouseOver) {
 				currMouseOver = foundMouseOver;
 			}
 			currMouseOver.UpdateUI(cam, info.point);
+			// Do input
+			if (Input.GetMouseButtonDown(0)) {
+				foundMouseOver.OnClick(0);
+			}
+			if (Input.GetMouseButtonDown(1)) {
+				foundMouseOver.OnClick(1);
+			}
 		} else {
 			currMouseOver = null;
 		}

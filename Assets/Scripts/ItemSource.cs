@@ -9,10 +9,13 @@ public class ItemSource : MonoBehaviour, IMouseOverUI {
 
 	private ItemStack currPopup;
 	
-	void OnMouseDown() {
-		Debug.Log("Clicked!");
+	public void OnClick(int button = 0) {
 		if (itemType != null && InventoryManager.inst != null && (infiniteSource || amountLeft > 0)) {
-			InventoryManager.inst.AddItem(itemType);
+			if (button == 0) {
+				InventoryManager.inst.Add(itemType, 1);
+			} else {
+				InventoryManager.inst.RemoveCount(itemType, 1);
+			}
 			if (!infiniteSource) {
 				amountLeft--;
 				if (currPopup != null) currPopup.Count = amountLeft;

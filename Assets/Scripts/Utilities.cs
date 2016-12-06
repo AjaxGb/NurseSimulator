@@ -68,6 +68,10 @@ public static class Utilities {
 		return default(V);
 	}
 
+	public static bool Contains(this LayerMask mask, int layer) {
+		return mask == (mask | (1 << layer));
+	}
+
 	public static List<T>[] ArrayOfLists<T>(int length) {
 		List<T>[] aol = new List<T>[length];
 		for (int i = 0; i < length; i++) {
