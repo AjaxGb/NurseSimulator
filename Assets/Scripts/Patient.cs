@@ -28,9 +28,8 @@ public class PatientData : ISerializationCallbackReceiver {
 }
 
 public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
-    public ItemStack popupPrefab;
-
-    private ItemStack currPopup;
+    public RectTransform popupPrefab;
+    private RectTransform currPopup;
 
     public PatientData data { get; private set; }
 	private NavMeshAgent navAgent;
@@ -69,7 +68,7 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
 		foreach (Action a in _despawnActions) a();
 	}
 
-    void ShowUI(Transform parent, Camera camera)
+    public void ShowUI(Transform parent, Camera camera)
     {
         if (currPopup != null)
         {
@@ -81,8 +80,15 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
             currPopup.transform.SetParent(parent);
         }
     }
+    public void UpdateUI(Camera camera, Vector3 point)
+    {
+        if (currPopup != null)
+        {
+            currPopup.transform.position = RectTransformUtility.WorldToScreenPoint(camera, point);
+        }
+    }
 
-    private void HideUI()
+    public void HideUI()
     {
         if (currPopup != null)
         {
@@ -90,37 +96,16 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
         }
     }
 
-    void IMouseOverUI.UpdateUI(Camera camera, Vector3 point)
-    {
-        throw new NotImplementedException();
-    }
+   
 
-    void IMouseOverUI.HideUI()
-    {
-        if (currPopup != null)
-        {
-            Destroy(currPopup.gameObject);
-        }
-    }
 
-    void IMouseOverUI.OnClick(int button)
+    public void OnClick(int button)
     {
         follow = true;
         Player.inst.escortee = this;
     }
 
-    void IMouseOverUI.ShowUI(Transform parent, Camera camera)
-    {
-        if (currPopup != null)
-        {
-            HideUI();
-        }
-        if (popupPrefab != null)
-        {
-            currPopup = Instantiate(popupPrefab);
-            currPopup.transform.SetParent(parent);
-        }
-    }
+    
 }
 
    
