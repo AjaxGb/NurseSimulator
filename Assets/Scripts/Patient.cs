@@ -48,7 +48,7 @@ public class Patient : MonoBehaviour, IDespawnEvents {
 
 	// Update is called once per frame
 	void Update () {
-		navAgent.destination = Player.inst.transform.position;
+		navAgent.destination = GameObject.FindWithTag("destination").transform.position;
 	}
 
 	void OnDestroy() {
