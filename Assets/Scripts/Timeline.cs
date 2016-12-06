@@ -6,6 +6,7 @@ using UnityEngine;
 public class Timeline : MonoBehaviour {
 
 	public Patient patientPrefab;
+	public Spawnpoint[] spawnpoints;
 	public TextAsset timelineJSON;
 	
 	public enum EventStatus { registered, started, ended }
@@ -83,10 +84,13 @@ public class Timeline : MonoBehaviour {
 	public class TimelineData {
 		[Serializable]
 		public class SpawnEvent : Event {
+			public string spawnpoint;
 			public PatientData patient;
 
 			public override void Execute(Timeline timeline) {
+				Spawnpoint spawn = timeline.GetSpawnpoint(spawnpoint);
 				Patient p = Instantiate(timeline.patientPrefab);
+				p.transform.position = spawn.transform.position;
 				p.Setup(patient);
 				p.AddDespawnAction(() => timeline.EventEnded(this));
 			}
@@ -95,11 +99,26 @@ public class Timeline : MonoBehaviour {
 	}
 
 	private SortedList<float, Event> eventQueue = new SortedList<float, Event>();
-	private Dictionary<string, Event> idMap = new Dictionary<string, Event>();
+	private Dictionary<string, Event> eventIdMap = new Dictionary<string, Event>();
 	private Dictionary<string, ICollection<Event>> waitingOnId = new Dictionary<string, ICollection<Event>>();
+	private Dictionary<string, Spawnpoint> spawnpointIds = new Dictionary<string, Spawnpoint>();
+
+	public int TotalSpawnpointWeight { get; private set; }
 
 	// Use this for initialization
 	void Start () {
+		if (spawnpoints == null || spawnpoints.Length == 0) {
+			spawnpoints = GetComponentsInChildren<Spawnpoint>();
+			if (spawnpoints == null || spawnpoints.Length == 0) {
+				Debug.LogWarning("No spawnpoints found!");
+			}
+		}
+		TotalSpawnpointWeight = 0;
+		foreach (var sp in spawnpoints) {
+			spawnpointIds.Add(sp.id, sp);
+			TotalSpawnpointWeight += sp.weight;
+		}
+
 		TimelineData data = JsonUtility.FromJson<TimelineData>(timelineJSON.text);
 		print(JsonUtility.ToJson(data));
 		foreach (var spawn in data.spawns) {
@@ -116,7 +135,7 @@ public class Timeline : MonoBehaviour {
 			var ids = e.prereqs.Keys.ToArray();
 			foreach (var id in ids) {
 				Event target;
-				if (idMap.TryGetValue(id, out target)) {
+				if (eventIdMap.TryGetValue(id, out target)) {
 					// Already registered
 					CheckPrereqAgainstRegistered(e, target);
 				} else {
@@ -127,7 +146,7 @@ public class Timeline : MonoBehaviour {
 	}
 
 	private void RegisterId(Event e) {
-		idMap.Add(e.id, e);
+		eventIdMap.Add(e.id, e);
 		// Were any other events waiting for this event to be registered?
 		ICollection<Event> waiting;
 		if (waitingOnId.TryGetValue(e.id, out waiting)) {
@@ -157,6 +176,16 @@ public class Timeline : MonoBehaviour {
 		foreach (Event w in e.AfterIHave(EventStatus.ended)) {
 			PrereqSatisfied(w, e.id);
 		}
+	}
+
+	public Spawnpoint GetSpawnpoint(string id = null) {
+		Spawnpoint spawn;
+		if (id == null) {
+			spawn = spawnpoints.WeightedChoice(TotalSpawnpointWeight);
+		} else if (!spawnpointIds.TryGetValue(id, out spawn)) {
+			throw new ArgumentException(id + " is not a known spawnpoint");
+		}
+		return spawn;
 	}
 
 	private void PrereqSatisfied(Event e, string prereq_id) {

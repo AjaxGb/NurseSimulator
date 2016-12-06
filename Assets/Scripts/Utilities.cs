@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 [Serializable]
 public struct SerializeTime {
@@ -40,6 +41,10 @@ public struct SerializeTime {
 	}
 }
 
+public interface IWeighted {
+	int Weight { get; }
+}
+
 public static class Utilities {
 
 	public static V GetOrInsertDefault<K,V>(this Dictionary<K,V> dict, K key, Func<V> def) {
@@ -49,6 +54,18 @@ public static class Utilities {
 			dict[key] = value;
 		}
 		return value;
+	}
+
+	public static V WeightedChoice<V>(this ICollection<V> list, int totalWeight) where V : IWeighted {
+		int randomNumber = UnityEngine.Random.Range(0, totalWeight);
+		
+		foreach (V inst in list) {
+			if (randomNumber < inst.Weight) {
+				return inst;
+			}
+			randomNumber -= inst.Weight;
+		}
+		return default(V);
 	}
 
 	public static List<T>[] ArrayOfLists<T>(int length) {
