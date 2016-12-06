@@ -7,7 +7,7 @@ public class WaitingRoomOrganizer : MonoBehaviour {
 	public Transform[] destinations;
 
 	public static WaitingRoomOrganizer inst { get; private set; }
-	private Dictionary<Vector3, bool> occupiedMap;
+	private Dictionary<Vector3, bool> occupiedMap = new Dictionary<Vector3, bool>();
 	
 	// Use this for initialization
 	void Start () {

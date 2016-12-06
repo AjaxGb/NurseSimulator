@@ -91,6 +91,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa53ab51c273f3848a9c7b0a7a846800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popupPrefab: {fileID: 0}
+  follow: 0
+  destination: {x: 0, y: 0, z: 0}
 --- !u!136 &136000010629347924
 CapsuleCollider:
   m_ObjectHideFlags: 1

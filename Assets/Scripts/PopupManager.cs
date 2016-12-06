@@ -4,7 +4,7 @@ public class PopupManager : MonoBehaviour {
 	public Camera playerCamera;
 	public bool useCenterOfCamera;
 	public float maxDistance = 10.0f;
-	public LayerMask layerMask;
+	public string mouseOverTag;
 
 	public static PopupManager inst { get; private set; }
 
@@ -37,7 +37,7 @@ public class PopupManager : MonoBehaviour {
 			cam.ScreenPointToRay(Input.mousePosition);
 
 		RaycastHit info;
-		if (Physics.Raycast(ray, out info, maxDistance) && layerMask.Contains(info.transform.gameObject.layer)) {
+		if (Physics.Raycast(ray, out info, maxDistance) && info.transform.CompareTag(mouseOverTag)) {
 			IMouseOverUI foundMouseOver = info.transform.GetComponent<IMouseOverUI>();
 			if (foundMouseOver != currMouseOver) {
 				currMouseOver = foundMouseOver;
