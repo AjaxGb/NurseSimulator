@@ -105,7 +105,8 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
 
     void IMouseOverUI.OnClick(int button)
     {
-        throw new NotImplementedException();
+        follow = true;
+        Player.inst.escortee = this;
     }
 
     void IMouseOverUI.ShowUI(Transform parent, Camera camera)
