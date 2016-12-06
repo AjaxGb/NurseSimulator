@@ -10,7 +10,7 @@ public class PatientData : ISerializationCallbackReceiver {
 	public string gender;
     public string condition;
     public float deathChance;
-    public ItemType[] RequiredItems;
+    public string[] required_items;
 	public Color color;
 
 	[NonSerialized]
@@ -35,7 +35,10 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
     public PatientData data { get; private set; }
 	private NavMeshAgent navAgent;
 
-	private ICollection<Action> _despawnActions = new List<Action>();
+    public bool follow = false;
+    public Vector3 destination = GameObject.FindWithTag("destination").transform.position;
+
+    private ICollection<Action> _despawnActions = new List<Action>();
 	public void AddDespawnAction(Action a) {
 		_despawnActions.Add(a);
 	}
@@ -51,7 +54,14 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
 
 	// Update is called once per frame
 	void Update () {
-		navAgent.destination = GameObject.FindWithTag("destination").transform.position;
+        if (follow)
+        {
+            navAgent.destination = Player.inst.transform.position;
+        }
+        else
+        {
+            navAgent.destination = destination;
+        }
 	}
 
 	void OnDestroy() {
@@ -95,7 +105,8 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
 
     void IMouseOverUI.OnClick(int button)
     {
-        throw new NotImplementedException();
+        follow = true;
+        Player.inst.escortee = this;
     }
 
     void IMouseOverUI.ShowUI(Transform parent, Camera camera)
