@@ -68,6 +68,7 @@ public class CheckAvailable : MonoBehaviour, IMouseOverUI {
             Player.inst.escortee.follow = false;
             Player.inst.escortee.destination = transform.position;
             Player.inst.escortee = null;
+            _inUse = true;
         }
     }
 }
