@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1a49803e48c1334f8b30c9421f70632, type: 3}
-  m_Name: TestItem5
+  m_Name: Steroid
   m_EditorClassIdentifier: 
-  Name: One more
-  Image: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  Name: Steroid
+  Image: {fileID: 21300000, guid: 8f199de888ace904d9ea36c26e13e866, type: 3}
