@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Building2
+  m_Name: Floor
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION _NORMALMAP
   m_LightmapFlags: 1
@@ -18,7 +18,7 @@ Material:
     - first:
         name: _BumpMap
       second:
-        m_Texture: {fileID: 2800000, guid: a5eb48483431b494d94a24a06dc72a05, type: 3}
+        m_Texture: {fileID: 2800000, guid: ecc5af2163b286a47ba4eec52528062f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -43,13 +43,13 @@ Material:
         name: _EmissionMap
       second:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 0.82}
+        m_Scale: {x: 30, y: 15}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: 99636b9ca44a0c442ac05ed5e9aa6846, type: 3}
-        m_Scale: {x: 1, y: 0.82}
+        m_Texture: {fileID: 2800000, guid: cd6a7dc80554add4a86522cd6a2bcb5f, type: 3}
+        m_Scale: {x: 30, y: 15}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _MetallicGlossMap
@@ -70,9 +70,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - first:
-        name: PixelSnap
-      second: 0
     - first:
         name: _BumpScale
       second: 1
@@ -96,7 +93,7 @@ Material:
       second: 1
     - first:
         name: _Metallic
-      second: 0
+      second: 0.45
     - first:
         name: _Mode
       second: 0
@@ -127,4 +124,4 @@ Material:
       second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _EmissionColor
-      second: {r: 0, g: 0, b: 0, a: 1}
+      second: {r: 0.36056444, g: 0.4021574, b: 0.41911763, a: 1}
