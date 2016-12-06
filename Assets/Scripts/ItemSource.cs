@@ -5,15 +5,19 @@ public class ItemSource : MonoBehaviour, IMouseOverUI {
 	public ItemType itemType;
 	public bool infiniteSource;
 	public int amountLeft;
-	public RectTransform popupPrefab;
+	public ItemStack popupPrefab;
 
-	private RectTransform currPopup;
+	private ItemStack currPopup;
 	
 	void OnMouseDown() {
+		Debug.Log("Clicked!");
 		if (itemType != null && InventoryManager.inst != null && (infiniteSource || amountLeft > 0)) {
 			InventoryManager.inst.AddItem(itemType);
 			if (!infiniteSource) {
 				amountLeft--;
+				if (currPopup != null) currPopup.Count = amountLeft;
+			} else {
+				if (currPopup != null) currPopup.Count = -1;
 			}
 		}
 	}
@@ -24,13 +28,14 @@ public class ItemSource : MonoBehaviour, IMouseOverUI {
 		}
 		if (popupPrefab != null) {
 			currPopup = Instantiate(popupPrefab);
-			currPopup.SetParent(parent);
+			currPopup.transform.SetParent(parent);
+			currPopup.SetItem(itemType, infiniteSource ? -1 : amountLeft);
 		}
 	}
 
-	public void UpdateUI(Camera camera) {
+	public void UpdateUI(Camera camera, Vector3 point) {
 		if (currPopup != null) {
-			currPopup.position = RectTransformUtility.WorldToScreenPoint(camera, this.transform.position);
+			currPopup.transform.position = RectTransformUtility.WorldToScreenPoint(camera, point);
 		}
 	}
 

@@ -25,6 +25,9 @@ public class ItemStack : MonoBehaviour {
 			if (value > 1) {
 				_uiMult.text = '\u00D7' + value.ToString();
 				_uiMult.enabled = true;
+			} else if (value < 0) {
+				_uiMult.text = "\u00D7\u221E";
+				_uiMult.enabled = true;
 			} else {
 				_uiMult.enabled = false;
 			}
