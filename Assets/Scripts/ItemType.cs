@@ -1,9 +1,22 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 [CreateAssetMenu]
 public class ItemType : ScriptableObject {
 	public string Name;
 	public Sprite Image;
+	
+	private static Dictionary<string, ItemType> nameMap = new Dictionary<string, ItemType>();
+
+	public void OnEnable() {
+		nameMap.Add(this.Name, this);
+	}
+
+	public static ItemType FromName(string name) {
+		ItemType type;
+		nameMap.TryGetValue(name, out type);
+		return type;
+	}
 
 	public override bool Equals(object obj) {
 		if (obj == null || GetType() != obj.GetType()) {
