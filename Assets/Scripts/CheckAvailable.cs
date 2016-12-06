@@ -16,15 +16,13 @@ public class CheckAvailable : MonoBehaviour, IMouseOverUI {
             _inUse = value;
             if (currPopup == null) return;
             Text t = currPopup.GetComponentInChildren<Text>();
-            if (value)
-            {
+            if (value) {
                 t.text = "Requires Materials!\n";
-                foreach (ItemType item in guy.data.RequiredItems) {
-                    t.text += item.Name + "\n";
+                foreach (string item in guy.data.required_items) {
+                    t.text += item + "\n";
                 }
                 t.color = new Color(1, 0, 0);
-            } else
-            {
+            } else {
                 t.text = "Available";
                 t.color = new Color(0, 1, 0);
             }
@@ -65,6 +63,11 @@ public class CheckAvailable : MonoBehaviour, IMouseOverUI {
 
     public void OnClick(int button = 0)
     {
-        //TODO: add patient to room
+        if (Player.inst.escortee != null && !_inUse) {
+            guy = Player.inst.escortee;
+            Player.inst.escortee.follow = false;
+            Player.inst.escortee.destination = transform.position;
+            Player.inst.escortee = null;
+        }
     }
 }

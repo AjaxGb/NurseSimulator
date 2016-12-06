@@ -8,6 +8,16 @@
 			"patient": {
 				"name": "John Somebody",
 				"gender": "male",
+				"condition": "Infected Wound",
+				"required_items": [
+					"Gauze",
+					"Binding",
+					"Antiseptic",
+					"Antibiotic",
+					"Scalpel",
+					"Stitches",
+					"Local Anesthetic"
+				],
 				"color": {
 					"r": 1.0
 				}
@@ -26,6 +36,16 @@
 			"patient": {
 				"name": "Alice",
 				"gender": "female",
+				"condition": "Allergic Reaction",
+				"required_items": [
+					"Gauze",
+					"Binding",
+					"Antiseptic",
+					"Antibiotic",
+					"Scalpel",
+					"Stitches",
+					"Local Anesthetic"
+				],
 				"color": {
 					"g": 1.0
 				}

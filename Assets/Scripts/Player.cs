@@ -3,6 +3,7 @@
 public class Player : MonoBehaviour {
 
 	public static Player inst { get; private set; }
+    public Patient escortee;
 
 	// Use this for initialization
 	void Start () {
