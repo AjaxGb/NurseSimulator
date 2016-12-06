@@ -300,7 +300,7 @@ Prefab:
     - target: {fileID: 224000014118839992, guid: 87691dba1fbd0264093563bafa8a23ff,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 95
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000014118839992, guid: 87691dba1fbd0264093563bafa8a23ff,
         type: 2}
@@ -351,6 +351,7 @@ GameObject:
   - 33: {fileID: 1486005464}
   - 65: {fileID: 1486005463}
   - 23: {fileID: 1486005462}
+  - 114: {fileID: 1486005465}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -419,6 +420,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1486005460}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1486005465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1486005460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95b3a5fa61ce72419f524110a1651f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patientPrefab: {fileID: 114000013937286440, guid: 0b4ebb1a9b639d7429086a27245703a5,
+    type: 2}
+  timelineJSON: {fileID: 4900000, guid: 36b6fd066162a0b4ebf78f074dc265cf, type: 3}
 --- !u!1 &1540413252
 GameObject:
   m_ObjectHideFlags: 0
