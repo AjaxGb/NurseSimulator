@@ -89,7 +89,7 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012381008450}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: d185589385e5adb43bffa08d61430276, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 4358ed0e64fc1c14881bcee43df43469, type: 3}
   m_Controller: {fileID: 9100000, guid: 2f1cbe5f8af347d4f846d11f8751755e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -114,6 +114,7 @@ MonoBehaviour:
   room: {fileID: 0}
   follow: 0
   destination: {x: 0, y: 0, z: 0}
+  DeathTimeLeft: 999
 --- !u!136 &136000010629347924
 CapsuleCollider:
   m_ObjectHideFlags: 1
