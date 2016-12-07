@@ -11974,6 +11974,10 @@ MonoBehaviour:
   patientPrefab: {fileID: 114000013937286440, guid: 0b4ebb1a9b639d7429086a27245703a5,
     type: 2}
   spawnpoints: []
+  patientSkins:
+  - {fileID: 2100000, guid: 9d6aa3de4c4d84342a8f81cc02e1d49e, type: 2}
+  - {fileID: 2100000, guid: fcb6cc6906b7ea84e8ceef270a7e549d, type: 2}
+  - {fileID: 2100000, guid: 639202200c90357469b8090e071d71f8, type: 2}
   timelineJSON: {fileID: 4900000, guid: 346afa73281b5a4439719a1ed18fd1cd, type: 3}
 --- !u!4 &1433320725
 Transform:

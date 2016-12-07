@@ -7,6 +7,7 @@ public class Timeline : MonoBehaviour {
 
 	public Patient patientPrefab;
 	public Spawnpoint[] spawnpoints;
+	public Material[] patientSkins;
 	public TextAsset timelineJSON;
 	
 	public enum EventStatus { registered, started, ended }
@@ -89,9 +90,10 @@ public class Timeline : MonoBehaviour {
 
 			public override void Execute(Timeline timeline) {
 				Spawnpoint spawn = timeline.GetSpawnpoint(spawnpoint);
-				Debug.Log(timeline.patientPrefab);
 				Patient p = Instantiate(timeline.patientPrefab);
 				p.transform.position = spawn.transform.position;
+				patient.skinMaterial = (timeline.patientSkins.Length == 0) ? null :
+					timeline.patientSkins[UnityEngine.Random.Range(0, timeline.patientSkins.Length)];
 				p.Setup(patient);
 				p.AddDespawnAction(() => timeline.EventEnded(this));
 			}

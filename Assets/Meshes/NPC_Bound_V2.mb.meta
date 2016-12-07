@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5432d2b36975928498b993137222b200
-timeCreated: 1481130353
+guid: 4358ed0e64fc1c14881bcee43df43469
+timeCreated: 1481130831
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -182,14 +182,14 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.01
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
+    optimizeMeshForGPU: 0
     keepQuads: 0
     weldVertices: 1
     secondaryUVAngleDistortion: 8

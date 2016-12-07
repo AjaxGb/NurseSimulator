@@ -10,8 +10,9 @@ public class PatientData : ISerializationCallbackReceiver {
     public float death_time;
 	public float treatment_time;
     public string[] required_items;
-	public Color color;
-	
+
+	[NonSerialized]
+	public Material skinMaterial;
     [NonSerialized]
     public List<ItemType> requiredItemTypes;
 	public void OnBeforeSerialize() {
@@ -53,8 +54,9 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
 	public void Setup(PatientData data) {
 		this.data = data;
 		navAgent = GetComponent<NavMeshAgent>();
-		destination = WaitingRoomOrganizer.inst.OccupyUnoccupied();
-	}
+		if (data.skinMaterial != null) GetComponentInChildren<Renderer>().material = data.skinMaterial;
+		destination = WaitingRoomOrganizer.inst.OccupyUnoccupied();      
+    }
 
 	// Update is called once per frame
 	void Update () {
