@@ -3,31 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public enum Gender { male, female } // FOR THE PURPOSES OF THIS PROJECT
-
 [Serializable]
 public class PatientData : ISerializationCallbackReceiver {
     public string name;
-	public string gender;
     public string condition;
-    public float deathChance;
+    public float death_time;
+	public float treatment_time;
     public string[] required_items;
 	public Color color;
-
-	[NonSerialized]
-	public Gender parsedGender;
+	
     [NonSerialized]
     public List<ItemType> requiredItemTypes;
 	public void OnBeforeSerialize() {
-		gender = Enum.GetName(typeof(Gender), parsedGender);
         required_items = (from it in requiredItemTypes select it.name).ToArray();
 	}
-	public void OnAfterDeserialize() { // Loaded topic |
-		try {                          //              V
-			parsedGender = (gender == null) ? default(Gender) : (Gender)Enum.Parse(typeof(Gender), gender, true);
-		} catch (ArgumentException e) {
-			throw new FormatException(gender + " is not a valid Gender", e); // LOADED TOPIC
-		}
+	public void OnAfterDeserialize() {
         requiredItemTypes = new List<ItemType>();
         if (required_items != null)
         {
@@ -47,7 +37,7 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
 	private NavMeshAgent navAgent;
 
     public bool follow = false;
-	public Vector3 destination;
+	public Vector3 waitingRoomPos;
 
 	private ICollection<Action> _despawnActions;
 	public void AddDespawnAction(Action a) {
@@ -62,7 +52,7 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
 	public void Setup(PatientData data) {
 		this.data = data;
 		navAgent = GetComponent<NavMeshAgent>();
-		destination = WaitingRoomOrganizer.inst.OccupyUnoccupied();
+		waitingRoomPos = WaitingRoomOrganizer.inst.OccupyUnoccupied();
 	}
 
 	// Update is called once per frame
@@ -73,7 +63,7 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
         }
         else
         {
-            navAgent.destination = destination;
+            navAgent.destination = waitingRoomPos;
         }
 	}
 
@@ -112,16 +102,20 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
         }
     }
 
-   
-
-
     public void OnClick(int button)
     {
-        follow = true;
-        Player.inst.escortee = this;
+		if (button == 0) {
+			follow = true;
+			WaitingRoomOrganizer.inst.SetOccupied(waitingRoomPos, false);
+			Player.inst.escortee = this;
+		} else {
+			follow = false;
+			waitingRoomPos = WaitingRoomOrganizer.inst.OccupyUnoccupied();
+			if (Player.inst.escortee == this) {
+				Player.inst.escortee = null;
+			}
+		}
     }
-
-    
 }
 
    

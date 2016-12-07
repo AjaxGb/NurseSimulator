@@ -7,7 +7,6 @@
 			},
 			"patient": {
 				"name": "John Somebody",
-				"gender": "male",
 				"condition": "Infected Wound",
 				"required_items": [
 					"Gauze",
@@ -35,7 +34,6 @@
 			},
 			"patient": {
 				"name": "Alice",
-				"gender": "female",
 				"condition": "Allergic Reaction",
 				"required_items": [
 					"Gauze",
