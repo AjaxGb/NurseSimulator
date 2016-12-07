@@ -47,10 +47,10 @@ public class CheckAvailable : MonoBehaviour, IMouseOverUI {
 
     public void UpdateText()
     {
+        if (currPopup == null) return;
+        Text t = currPopup.GetComponentInChildren<Text>();
         if (!Treating)
         {
-            if (currPopup == null) return;
-            Text t = currPopup.GetComponentInChildren<Text>();
             if (InUse)
             {
                 t.text = "Requires Materials!\n";
@@ -65,6 +65,11 @@ public class CheckAvailable : MonoBehaviour, IMouseOverUI {
                 t.text = "Available";
                 t.color = new Color(0, 1, 0);
             }
+        }
+        if (Treating)
+        {
+            t.text = "Operating on Patient";
+            t.color = new Color(1, 1, 0);
         }
     }
 
