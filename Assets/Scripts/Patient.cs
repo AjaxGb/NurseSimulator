@@ -59,6 +59,7 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
 		if (data.skinMaterial != null) GetComponentInChildren<Renderer>().material = data.skinMaterial;
         destination = WaitingRoomOrganizer.inst.OccupyUnoccupied();
         DeathTimeLeft = data.death_time;
+		navAgent.enabled = true;
     }
 
 	// Update is called once per frame
@@ -86,14 +87,13 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
         {
             if (room != null)
             {
-                Text t = null;
-                if (currPopup != null)
+                if (room.currPopup != null)
                 {
-                    t = room.currPopup.GetComponentInChildren<Text>();
+					Text t = room.currPopup.GetComponentInChildren<Text>();
+					t.text = "Available, Patient just died...";
+					t.color = new Color(0.4f, 0, 0);
                 }
                 room.guy = null;
-                t.text = "Available, Patient just died...";
-                t.color = new Color(0.4f, 0, 0);
             }
             Destroy(this.gameObject);
         }

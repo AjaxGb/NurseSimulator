@@ -45,8 +45,10 @@ public class CheckAvailable : MonoBehaviour, IMouseOverUI {
             {
                 Destroy(guy.gameObject);
                 guy = null;
-                t.text = "Available, just cured Patient";
-                t.color = new Color(0, 1, 0);
+				if (t != null) {
+					t.text = "Available, just cured Patient";
+					t.color = new Color(0, 1, 0);
+				}
                 Treating = false;
             }
         }
