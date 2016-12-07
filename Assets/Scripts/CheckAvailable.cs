@@ -36,6 +36,7 @@ public class CheckAvailable : MonoBehaviour, IMouseOverUI {
             TreatingTimeLeft -= Time.deltaTime;
             if (TreatingTimeLeft <= 0)
             {
+                Destroy(guy.gameObject);
                 guy = null;
                 t.text = "Available, just cured Patient";
                 t.color = new Color(0, 1, 0);

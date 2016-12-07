@@ -8,6 +8,8 @@
 			"patient": {
 				"name": "John Somebody",
 				"condition": "Infected Wound",
+				"death_time": 100.0,
+				"treatment_time": 10.0,
 				"required_items": [
 					"Gauze",
 					"Binding",
@@ -35,6 +37,8 @@
 			"patient": {
 				"name": "Alice",
 				"condition": "Allergic Reaction",
+				"death_time": 100.0,
+				"treatment_time": 10.0,
 				"required_items": [
 					"Gauze",
 					"Binding",
