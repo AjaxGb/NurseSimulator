@@ -1,20 +1,88 @@
 fileFormatVersion: 2
-guid: 22640a34c1f3cbd419e84a9dc4cfb58a
-timeCreated: 1481130830
+guid: 05be782636a891749ace4c182770b67c
+timeCreated: 1481137441
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: bottom
-    100002: //RootNode
-    100004: pCube5
-    400000: bottom
-    400002: //RootNode
-    400004: pCube5
-    2300000: pCube5
-    3300000: pCube5
+    100000: //RootNode
+    100002: Back1
+    100004: Back2
+    100006: Back3
+    100008: Back4
+    100010: Back5
+    100012: Back6
+    100014: Back7
+    100016: Back8
+    100018: Body_CTRL
+    100020: L_Ankle
+    100022: L_Ball
+    100024: L_Clavicle
+    100026: L_Elbow
+    100028: L_Fingers
+    100030: L_Forearm
+    100032: L_Hip
+    100034: L_Knee
+    100036: L_Shoulder
+    100038: L_Toe
+    100040: L_Wrist
+    100042: LowerBack_CTRL
+    100044: Master_CTRL
+    100046: pCube5
+    100048: R_Ankle
+    100050: R_Ball
+    100052: R_Clavicle
+    100054: R_Elbow
+    100056: R_Fingers
+    100058: R_Forearm
+    100060: R_Hip
+    100062: R_Knee
+    100064: R_Shoulder
+    100066: R_Toe
+    100068: R_Wrist
+    100070: Root
+    100072: Skeleton_Grp
+    400000: //RootNode
+    400002: Back1
+    400004: Back2
+    400006: Back3
+    400008: Back4
+    400010: Back5
+    400012: Back6
+    400014: Back7
+    400016: Back8
+    400018: Body_CTRL
+    400020: L_Ankle
+    400022: L_Ball
+    400024: L_Clavicle
+    400026: L_Elbow
+    400028: L_Fingers
+    400030: L_Forearm
+    400032: L_Hip
+    400034: L_Knee
+    400036: L_Shoulder
+    400038: L_Toe
+    400040: L_Wrist
+    400042: LowerBack_CTRL
+    400044: Master_CTRL
+    400046: pCube5
+    400048: R_Ankle
+    400050: R_Ball
+    400052: R_Clavicle
+    400054: R_Elbow
+    400056: R_Fingers
+    400058: R_Forearm
+    400060: R_Hip
+    400062: R_Knee
+    400064: R_Shoulder
+    400066: R_Toe
+    400068: R_Wrist
+    400070: Root
+    400072: Skeleton_Grp
     4300000: pCube5
+    7400000: Take 001
     9500000: //RootNode
+    13700000: pCube5
   materials:
     importMaterials: 1
     materialName: 0
