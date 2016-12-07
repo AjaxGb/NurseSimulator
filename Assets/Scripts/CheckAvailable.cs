@@ -9,6 +9,8 @@ public class CheckAvailable : MonoBehaviour, IMouseOverUI {
     public Transform bedLocation;
     private bool Treating = false;
     private float TreatingTimeLeft = 999f;
+    public AudioClip impact;
+    private AudioSource FX;
 
     public bool InUse
     {
@@ -16,6 +18,11 @@ public class CheckAvailable : MonoBehaviour, IMouseOverUI {
     }
     public RectTransform popupPrefab;
     public RectTransform currPopup;
+
+    public void Start()
+    {
+        FX = GetComponent<AudioSource>();
+    }
 
     public void Update()
     {
@@ -116,6 +123,7 @@ public class CheckAvailable : MonoBehaviour, IMouseOverUI {
 			guy.destination = bedLocation.position;
             Player.inst.escortee = null;
         }
+        FX.PlayOneShot(impact, 0.7F);
         UpdateText();
     }
 }

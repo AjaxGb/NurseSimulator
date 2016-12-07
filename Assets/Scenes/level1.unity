@@ -983,6 +983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guy: {fileID: 0}
   bedLocation: {fileID: 1841328352}
+  impact: {fileID: 8300000, guid: 4e839718bbccdf946966416e809c56d2, type: 3}
   popupPrefab: {fileID: 224000012026279340, guid: 5204ec808c6a9b54ab7d4f832586b506,
     type: 2}
   currPopup: {fileID: 0}
@@ -1491,6 +1492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guy: {fileID: 0}
   bedLocation: {fileID: 930863667}
+  impact: {fileID: 8300000, guid: 4e839718bbccdf946966416e809c56d2, type: 3}
   popupPrefab: {fileID: 224000012026279340, guid: 5204ec808c6a9b54ab7d4f832586b506,
     type: 2}
   currPopup: {fileID: 0}
@@ -1780,6 +1782,109 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 170236983}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &177937723
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 177937724}
+  - 82: {fileID: 177937725}
+  m_Layer: 11
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &177937724
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 177937723}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 860419429}
+  m_RootOrder: 1
+--- !u!82 &177937725
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 177937723}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b05f855cc5cfd634b9b5a56cb2705011, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &178257832
 GameObject:
   m_ObjectHideFlags: 0
@@ -2808,6 +2913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guy: {fileID: 0}
   bedLocation: {fileID: 656001645}
+  impact: {fileID: 8300000, guid: 4e839718bbccdf946966416e809c56d2, type: 3}
   popupPrefab: {fileID: 224000012026279340, guid: 5204ec808c6a9b54ab7d4f832586b506,
     type: 2}
   currPopup: {fileID: 0}
@@ -5731,7 +5837,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 465.5, y: 219.5}
@@ -6502,6 +6608,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   escortee: {fileID: 0}
   inventory: {fileID: 2063825526}
+--- !u!4 &860419429 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+  m_PrefabInternal: {fileID: 1739761004}
 --- !u!1 &862236848
 GameObject:
   m_ObjectHideFlags: 0
@@ -6595,6 +6705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guy: {fileID: 0}
   bedLocation: {fileID: 974278699}
+  impact: {fileID: 8300000, guid: 4e839718bbccdf946966416e809c56d2, type: 3}
   popupPrefab: {fileID: 224000012026279340, guid: 5204ec808c6a9b54ab7d4f832586b506,
     type: 2}
   currPopup: {fileID: 0}
@@ -12935,6 +13046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guy: {fileID: 0}
   bedLocation: {fileID: 1971616774}
+  impact: {fileID: 8300000, guid: 4e839718bbccdf946966416e809c56d2, type: 3}
   popupPrefab: {fileID: 224000012026279340, guid: 5204ec808c6a9b54ab7d4f832586b506,
     type: 2}
   currPopup: {fileID: 0}
@@ -15148,6 +15260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guy: {fileID: 0}
   bedLocation: {fileID: 1612198605}
+  impact: {fileID: 8300000, guid: 4e839718bbccdf946966416e809c56d2, type: 3}
   popupPrefab: {fileID: 224000012026279340, guid: 5204ec808c6a9b54ab7d4f832586b506,
     type: 2}
   currPopup: {fileID: 0}
@@ -16560,6 +16673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guy: {fileID: 0}
   bedLocation: {fileID: 711865042}
+  impact: {fileID: 8300000, guid: 4e839718bbccdf946966416e809c56d2, type: 3}
   popupPrefab: {fileID: 224000012026279340, guid: 5204ec808c6a9b54ab7d4f832586b506,
     type: 2}
   currPopup: {fileID: 0}
@@ -17360,6 +17474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guy: {fileID: 0}
   bedLocation: {fileID: 480002678}
+  impact: {fileID: 8300000, guid: 4e839718bbccdf946966416e809c56d2, type: 3}
   popupPrefab: {fileID: 224000012026279340, guid: 5204ec808c6a9b54ab7d4f832586b506,
     type: 2}
   currPopup: {fileID: 0}
