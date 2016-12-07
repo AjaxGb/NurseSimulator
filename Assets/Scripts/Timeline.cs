@@ -89,6 +89,7 @@ public class Timeline : MonoBehaviour {
 
 			public override void Execute(Timeline timeline) {
 				Spawnpoint spawn = timeline.GetSpawnpoint(spawnpoint);
+				Debug.Log(timeline.patientPrefab);
 				Patient p = Instantiate(timeline.patientPrefab);
 				p.transform.position = spawn.transform.position;
 				p.Setup(patient);

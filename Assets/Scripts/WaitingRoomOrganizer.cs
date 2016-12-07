@@ -12,6 +12,7 @@ public class WaitingRoomOrganizer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		if (inst != null) Debug.LogWarning("More than one WaitingRoomOrganizer!");
+		inst = this;
 		foreach (var t in destinations) {
 			occupiedMap.Add(t.position, false);
 		}
@@ -21,9 +22,18 @@ public class WaitingRoomOrganizer : MonoBehaviour {
 		return (from kvp in occupiedMap where !kvp.Value select kvp.Key).FirstOrDefault();
 	}
 
-	public void SetOccupied(Vector3 position, bool occupied) {
+	public Vector3 OccupyUnoccupied() {
+		Vector3 p = GetUnoccupied();
+		SetOccupied(p, true);
+		return p;
+	}
+
+	public bool SetOccupied(Vector3 position, bool occupied) {
 		if (occupiedMap.ContainsKey(position)) {
 			occupiedMap[position] = occupied;
+			return true;
+		} else {
+			return false;
 		}
 	}
 }

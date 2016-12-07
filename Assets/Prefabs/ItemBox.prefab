@@ -25,7 +25,7 @@ GameObject:
   - 114: {fileID: 114000012577307732}
   m_Layer: 0
   m_Name: ItemBox
-  m_TagString: Untagged
+  m_TagString: MouseOver
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,3 +105,4 @@ MonoBehaviour:
   itemType: {fileID: 11400000, guid: 9e4882623b446db48939c9371c1fbb38, type: 2}
   infiniteSource: 1
   amountLeft: 0
+  popupPrefab: {fileID: 0}

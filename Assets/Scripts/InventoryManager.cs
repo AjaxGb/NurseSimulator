@@ -7,15 +7,6 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour, IDictionary<ItemType, int> {
 
 	public ItemStack itemPrefab;
-	public static InventoryManager inst { get; private set; }
-
-	void Start() {
-		if (inst != null) {
-			Debug.LogWarning("Two InventoryManagers are active at once!");
-		} else {
-			inst = this;
-		}
-	}
 
 	private Dictionary<ItemType, ItemStack> items = new Dictionary<ItemType, ItemStack>();
 

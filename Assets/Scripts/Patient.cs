@@ -47,20 +47,22 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
 	private NavMeshAgent navAgent;
 
     public bool follow = false;
-    public Vector3 destination = GameObject.FindWithTag("destination").transform.position;
+	public Vector3 destination;
 
-    private ICollection<Action> _despawnActions = new List<Action>();
+	private ICollection<Action> _despawnActions;
 	public void AddDespawnAction(Action a) {
+		if (_despawnActions == null) _despawnActions = new List<Action>();
 		_despawnActions.Add(a);
 	}
 	public bool RemoveDespawnAction(Action a) {
-		return _despawnActions.Remove(a);
+		return _despawnActions != null && _despawnActions.Remove(a);
 	}
 
 	// NOT Start(), this is called manually on spawn
 	public void Setup(PatientData data) {
 		this.data = data;
 		navAgent = GetComponent<NavMeshAgent>();
+		destination = WaitingRoomOrganizer.inst.OccupyUnoccupied();
 	}
 
 	// Update is called once per frame
@@ -77,7 +79,9 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
 
 	void OnDestroy() {
 		// Move this if we do not destroy patients after they are done;
-		foreach (Action a in _despawnActions) a();
+		if (_despawnActions != null) {
+			foreach (Action a in _despawnActions) a();
+		}
 	}
 
     public void ShowUI(Transform parent, Camera camera)

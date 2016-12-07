@@ -4,6 +4,7 @@ public class Player : MonoBehaviour {
 
 	public static Player inst { get; private set; }
     public Patient escortee;
+	public InventoryManager inventory;
 
 	// Use this for initialization
 	void Start () {

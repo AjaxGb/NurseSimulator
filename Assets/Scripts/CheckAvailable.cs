@@ -16,7 +16,7 @@ public class CheckAvailable : MonoBehaviour, IMouseOverUI {
 
     public void Update()
     {
-        if (guy.data.requiredItemTypes.Count <= 0)
+        if (guy != null && guy.data.requiredItemTypes.Count <= 0)
         {
             // TODO: Show patient cured screen, new room available
         }
@@ -77,11 +77,11 @@ public class CheckAvailable : MonoBehaviour, IMouseOverUI {
         if (InUse)
         {
             //Check inventory for needed items and remove them
-            guy.data.requiredItemTypes.RemoveAll(item => InventoryManager.inst.RemoveCount(item) > 0);
+            guy.data.requiredItemTypes.RemoveAll(item => Player.inst.inventory.RemoveCount(item) > 0);
         } else if (Player.inst.escortee != null) {
             guy = Player.inst.escortee;
-            Player.inst.escortee.follow = false;
-            Player.inst.escortee.destination = transform.position;
+            guy.follow = false;
+			guy.destination = transform.position;
             Player.inst.escortee = null;
         }
         UpdateText();
