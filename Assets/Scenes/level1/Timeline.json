@@ -14,7 +14,7 @@
 		{
 			"id": "Day1",
 			"delay": {
-				"seconds": 60.0
+				"seconds": 30.0
 			},
 			"patient": {
 				"name": "Alice",
@@ -79,7 +79,7 @@
 				}
 			],
 			"delay": {
-				"seconds": 60.0
+				"seconds": 30.0
 			},
 			"patient": {
 				"name": "Jerry McFierce",
@@ -100,7 +100,7 @@
 				}
 			],
 			"delay": {
-				"seconds": 80.0
+				"seconds": 60.0
 			},
 			"patient": {
 				"name": "Jerry McFierce",
@@ -122,7 +122,7 @@
 				}
 			],
 			"delay": {
-				"seconds": 82.0
+				"seconds": 62.0
 			},
 			"patient": {
 				"name": "Donna McFierce",
@@ -163,7 +163,7 @@
 				}
 			],
 			"delay": {
-				"seconds": 30.0
+				"seconds": 20.0
 			},
 			"patient": {
 				"name": "Kendra Johnson",
@@ -185,7 +185,7 @@
 				}
 			],
 			"delay": {
-				"seconds": 32.0
+				"seconds": 22.0
 			},
 			"patient": {
 				"name": "Michael Jukeson",
@@ -214,7 +214,7 @@
 				}
 			],
 			"delay": {
-				"seconds": 75.0
+				"seconds": 44.0
 			},
 			"patient": {
 				"name": "Peter Pander",
@@ -259,7 +259,7 @@
 				}
 			],
 			"delay": {
-				"seconds": 30.0
+				"seconds": 20.0
 			},
 			"patient": {
 				"name": "Lucky Luke",
@@ -285,7 +285,7 @@
 				}
 			],
 			"delay": {
-				"seconds": 32.0
+				"seconds": 22.0
 			},
 			"patient": {
 				"name": "Granada Goldenstein",
@@ -312,7 +312,7 @@
 				}
 			],
 			"delay": {
-				"seconds": 66.0
+				"seconds": 48.0
 			},
 			"patient": {
 				"name": "Sandusky Clausane",
@@ -386,7 +386,7 @@
 				}
 			],
 			"delay": {
-				"seconds": 45.0
+				"seconds": 25.0
 			},
 			"patient": {
 				"name": "Jay Zimmer",
@@ -411,7 +411,7 @@
 				}
 			],
 			"delay": {
-				"seconds": 45.0
+				"seconds": 27.0
 			},
 			"patient": {
 				"name": "Melissa Banana",
@@ -432,7 +432,7 @@
 				}
 			],
 			"delay": {
-				"seconds": 75.0
+				"seconds": 48.0
 			},
 			"patient": {
 				"name": "Ovie Menderson",
