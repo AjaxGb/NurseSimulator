@@ -46,21 +46,24 @@ public class CheckAvailable : MonoBehaviour, IMouseOverUI {
 
     public void UpdateText()
     {
-        if (currPopup == null) return;
-        Text t = currPopup.GetComponentInChildren<Text>();
-        if (InUse)
+        if (!Treating)
         {
-            t.text = "Requires Materials!\n";
-            foreach (var item in guy.data.requiredItemTypes)
+            if (currPopup == null) return;
+            Text t = currPopup.GetComponentInChildren<Text>();
+            if (InUse)
             {
-                t.text += item.name + "\n";
+                t.text = "Requires Materials!\n";
+                foreach (var item in guy.data.requiredItemTypes)
+                {
+                    t.text += item.name + "\n";
+                }
+                t.color = new Color(1, 0, 0);
             }
-            t.color = new Color(1, 0, 0);
-        }
-        else
-        {
-            t.text = "Available";
-            t.color = new Color(0, 1, 0);
+            else
+            {
+                t.text = "Available";
+                t.color = new Color(0, 1, 0);
+            }
         }
     }
 
