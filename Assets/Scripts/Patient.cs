@@ -16,9 +16,7 @@ public class PatientData : ISerializationCallbackReceiver {
 	public Material skinMaterial;
     [NonSerialized]
     public List<ItemType> requiredItemTypes;
-	public void OnBeforeSerialize() {
-        required_items = (from it in requiredItemTypes select it.name).ToArray();
-	}
+	public void OnBeforeSerialize() {}
 	public void OnAfterDeserialize() {
         requiredItemTypes = new List<ItemType>();
         if (required_items != null)

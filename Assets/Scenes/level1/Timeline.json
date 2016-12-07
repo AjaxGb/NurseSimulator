@@ -194,7 +194,6 @@
 				"treatment_time": 45.0,
 				"required_items": [
 					"Scalpel",
-					"Forceps",
 					"Total Anesthetic",
 					"Stitches",
 					"Pins",
@@ -325,8 +324,7 @@
 					"Scalpel",
 					"Gauze",
 					"Binding",
-					"Forceps",
-					"Saline Bag",
+					"Saline",
 					"Total Anesthetic"
 				]
 			}
@@ -344,10 +342,9 @@
 				"death_time": 75.0,
 				"treatment_time": 30.0,
 				"required_items": [
-					"Oxygen",
+					"Oxygen Tank",
 					"Scalpel",
-					"Forceps",
-					"Anesthetic",
+					"Local Anesthetic",
 					"Stitches",
 					"Pins",
 					"X-Ray Vest",

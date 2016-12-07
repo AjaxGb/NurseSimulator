@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a49803e48c1334f8b30c9421f70632, type: 3}
   m_Name: Steroid
   m_EditorClassIdentifier: 
-  Name: Steroid
+  Name: Steroids
   Image: {fileID: 21300000, guid: 8f199de888ace904d9ea36c26e13e866, type: 3}

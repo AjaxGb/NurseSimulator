@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a49803e48c1334f8b30c9421f70632, type: 3}
   m_Name: AntiCoagulant
   m_EditorClassIdentifier: 
-  Name: Anti-Coagulant
+  Name: Anticoagulant
   Image: {fileID: 21300000, guid: bb799f0ed049d5543ae722a6f0a7cb4e, type: 3}
