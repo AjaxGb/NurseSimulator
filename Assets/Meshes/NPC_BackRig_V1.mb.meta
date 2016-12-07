@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: d0e84d77ab558164b930ee27b2fdd477
+timeCreated: 1481130832
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Back1
+    100002: Back2
+    100004: Back3
+    100006: Back4
+    100008: Back5
+    100010: Back6
+    100012: Back7
+    100014: Back8
+    100016: Back_IK
+    100018: Body_CTRL
+    100020: bottom
+    100022: IK_BackCurve
+    100024: L_Ankle
+    100026: L_Ankle_IK
+    100028: L_Ankle_Pivot
+    100030: L_Ball
+    100032: L_Ball_IK
+    100034: L_Foot_CTRL
+    100036: L_HeelPeel_Pivot
+    100038: L_Hip
+    100040: L_Knee
+    100042: L_KneeCTRL
+    100044: L_SwivelPivot
+    100046: L_Toe
+    100048: L_Toe_IK
+    100050: L_ToePivot
+    100052: L_ToeTip_Pivot
+    100054: LowerBack_Cluster
+    100056: LowerBack_CTRL
+    100058: //RootNode
+    100060: pCube5
+    100062: R_Ankle
+    100064: R_Ankle_IK
+    100066: R_Ankle_Pivot
+    100068: R_Ball
+    100070: R_Ball_IK
+    100072: R_Foot_CTRL
+    100074: R_HeelPeel_Pivot
+    100076: R_Hip
+    100078: R_Knee
+    100080: R_Knee_CTRL
+    100082: R_Swivel_Pivot
+    100084: R_Toe
+    100086: R_Toe_IK
+    100088: R_ToeTip_Pivot
+    100090: Root
+    100092: ToeTap_Pivot
+    100094: UpperBack_Cluster
+    100096: UpperBack_CTRL
+    400000: Back1
+    400002: Back2
+    400004: Back3
+    400006: Back4
+    400008: Back5
+    400010: Back6
+    400012: Back7
+    400014: Back8
+    400016: Back_IK
+    400018: Body_CTRL
+    400020: bottom
+    400022: IK_BackCurve
+    400024: L_Ankle
+    400026: L_Ankle_IK
+    400028: L_Ankle_Pivot
+    400030: L_Ball
+    400032: L_Ball_IK
+    400034: L_Foot_CTRL
+    400036: L_HeelPeel_Pivot
+    400038: L_Hip
+    400040: L_Knee
+    400042: L_KneeCTRL
+    400044: L_SwivelPivot
+    400046: L_Toe
+    400048: L_Toe_IK
+    400050: L_ToePivot
+    400052: L_ToeTip_Pivot
+    400054: LowerBack_Cluster
+    400056: LowerBack_CTRL
+    400058: //RootNode
+    400060: pCube5
+    400062: R_Ankle
+    400064: R_Ankle_IK
+    400066: R_Ankle_Pivot
+    400068: R_Ball
+    400070: R_Ball_IK
+    400072: R_Foot_CTRL
+    400074: R_HeelPeel_Pivot
+    400076: R_Hip
+    400078: R_Knee
+    400080: R_Knee_CTRL
+    400082: R_Swivel_Pivot
+    400084: R_Toe
+    400086: R_Toe_IK
+    400088: R_ToeTip_Pivot
+    400090: Root
+    400092: ToeTap_Pivot
+    400094: UpperBack_Cluster
+    400096: UpperBack_CTRL
+    2300000: pCube5
+    3300000: pCube5
+    4300000: pCube5
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
