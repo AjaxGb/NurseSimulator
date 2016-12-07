@@ -113,21 +113,21 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
         t.text = "Name: " + data.name + "\n";
         t.text += "Condition: " + data.condition + "\n";
         if (DeathTimeLeft < 5f)
-            t.text += "Health: Seconds until DEATH\n";
+            t.text += "Health: Seconds from death\n";
         else if (DeathTimeLeft < 10f)
-            t.text += "Health: ALMOST DEAD\n";
+            t.text += "Health: Dying\n";
         else if (DeathTimeLeft < 20f)
-            t.text += "Health: CRITICAL!!!\n";
+            t.text += "Health: Almost dead\n";
         else if (DeathTimeLeft < 40f)
-            t.text += "Health: In really bad shape\n";
+            t.text += "Health: Critical\n";
         else if (DeathTimeLeft < 60f)
-            t.text += "Health: Needs HELP!\n";
+            t.text += "Health: Urgently needs attention\n";
         else if (DeathTimeLeft < 80f)
-            t.text += "Health: Needs Attention Now!\n";
+            t.text += "Health: Needs attention\n";
         else if (DeathTimeLeft < 100f)
-            t.text += "Health: Needs Attention\n";
+            t.text += "Health: Needs attention soon\n";
         else if (DeathTimeLeft < 150f)
-            t.text += "Health: Needs Attention Soon\n";
+            t.text += "Health: Can wait\n";
         else if (DeathTimeLeft < 200f)
             t.text += "Health: Fine\n";
         t.color = new Color(0.2f, 0.6f, 1);
