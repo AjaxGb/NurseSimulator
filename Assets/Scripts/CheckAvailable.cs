@@ -81,7 +81,7 @@ public class CheckAvailable : MonoBehaviour, IMouseOverUI {
         } else if (Player.inst.escortee != null) {
             guy = Player.inst.escortee;
             guy.follow = false;
-			guy.destination = transform.position;
+			guy.waitingRoomPos = transform.position;
             Player.inst.escortee = null;
         }
         UpdateText();
