@@ -53,8 +53,8 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
 	public void Setup(PatientData data) {
 		this.data = data;
 		navAgent = GetComponent<NavMeshAgent>();
-		destination = WaitingRoomOrganizer.inst.OccupyUnoccupied();
-	}
+		destination = WaitingRoomOrganizer.inst.OccupyUnoccupied();        
+    }
 
 	// Update is called once per frame
 	void Update () {
