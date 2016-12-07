@@ -4,32 +4,43 @@ using System.Collections;
 using System;
 
 public class CheckAvailable : MonoBehaviour, IMouseOverUI {
-
-    private bool _inUse;
+    
     public Patient guy;
 
     public bool InUse
     {
-        get { return _inUse; }
-        set
-        {
-            _inUse = value;
-            if (currPopup == null) return;
-            Text t = currPopup.GetComponentInChildren<Text>();
-            if (value) {
-                t.text = "Requires Materials!\n";
-                foreach (string item in guy.data.required_items) {
-                    t.text += item + "\n";
-                }
-                t.color = new Color(1, 0, 0);
-            } else {
-                t.text = "Available";
-                t.color = new Color(0, 1, 0);
-            }
-        }
+        get { return guy != null; }
     }
     public RectTransform popupPrefab;
     private RectTransform currPopup;
+
+    public void Update()
+    {
+        if (guy.data.requiredItemTypes.Count <= 0)
+        {
+            // TODO: Show patient cured screen, new room available
+        }
+    }
+
+    public void UpdateText()
+    {
+        if (currPopup == null) return;
+        Text t = currPopup.GetComponentInChildren<Text>();
+        if (InUse)
+        {
+            t.text = "Requires Materials!\n";
+            foreach (var item in guy.data.requiredItemTypes)
+            {
+                t.text += item.name + "\n";
+            }
+            t.color = new Color(1, 0, 0);
+        }
+        else
+        {
+            t.text = "Available";
+            t.color = new Color(0, 1, 0);
+        }
+    }
 
     public void ShowUI(Transform parent, Camera camera)
     {
@@ -41,7 +52,7 @@ public class CheckAvailable : MonoBehaviour, IMouseOverUI {
         {
             currPopup = Instantiate(popupPrefab);
             currPopup.transform.SetParent(parent);
-            InUse = InUse;
+            UpdateText();
         }
     }
 
@@ -63,11 +74,16 @@ public class CheckAvailable : MonoBehaviour, IMouseOverUI {
 
     public void OnClick(int button = 0)
     {
-        if (Player.inst.escortee != null && !_inUse) {
+        if (InUse)
+        {
+            //Check inventory for needed items and remove them
+            guy.data.requiredItemTypes.RemoveAll(item => InventoryManager.inst.RemoveCount(item) > 0);
+        } else if (Player.inst.escortee != null) {
             guy = Player.inst.escortee;
             Player.inst.escortee.follow = false;
             Player.inst.escortee.destination = transform.position;
             Player.inst.escortee = null;
         }
+        UpdateText();
     }
 }

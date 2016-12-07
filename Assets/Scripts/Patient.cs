@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public enum Gender { male, female } // FOR THE PURPOSES OF THIS PROJECT
@@ -15,8 +16,11 @@ public class PatientData : ISerializationCallbackReceiver {
 
 	[NonSerialized]
 	public Gender parsedGender;
+    [NonSerialized]
+    public List<ItemType> requiredItemTypes;
 	public void OnBeforeSerialize() {
 		gender = Enum.GetName(typeof(Gender), parsedGender);
+        required_items = (from it in requiredItemTypes select it.name).ToArray();
 	}
 	public void OnAfterDeserialize() { // Loaded topic |
 		try {                          //              V
@@ -24,13 +28,20 @@ public class PatientData : ISerializationCallbackReceiver {
 		} catch (ArgumentException e) {
 			throw new FormatException(gender + " is not a valid Gender", e); // LOADED TOPIC
 		}
+        requiredItemTypes = new List<ItemType>();
+        if (required_items != null)
+        {
+            foreach (var name in required_items)
+            {
+                requiredItemTypes.Add(ItemType.FromName(name));
+            }
+        }
 	}
 }
 
 public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
-    public ItemStack popupPrefab;
-
-    private ItemStack currPopup;
+    public RectTransform popupPrefab;
+    private RectTransform currPopup;
 
     public PatientData data { get; private set; }
 	private NavMeshAgent navAgent;
@@ -69,7 +80,7 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
 		foreach (Action a in _despawnActions) a();
 	}
 
-    void ShowUI(Transform parent, Camera camera)
+    public void ShowUI(Transform parent, Camera camera)
     {
         if (currPopup != null)
         {
@@ -81,8 +92,15 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
             currPopup.transform.SetParent(parent);
         }
     }
+    public void UpdateUI(Camera camera, Vector3 point)
+    {
+        if (currPopup != null)
+        {
+            currPopup.transform.position = RectTransformUtility.WorldToScreenPoint(camera, point);
+        }
+    }
 
-    private void HideUI()
+    public void HideUI()
     {
         if (currPopup != null)
         {
@@ -90,37 +108,16 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
         }
     }
 
-    void IMouseOverUI.UpdateUI(Camera camera, Vector3 point)
-    {
-        throw new NotImplementedException();
-    }
+   
 
-    void IMouseOverUI.HideUI()
-    {
-        if (currPopup != null)
-        {
-            Destroy(currPopup.gameObject);
-        }
-    }
 
-    void IMouseOverUI.OnClick(int button)
+    public void OnClick(int button)
     {
         follow = true;
         Player.inst.escortee = this;
     }
 
-    void IMouseOverUI.ShowUI(Transform parent, Camera camera)
-    {
-        if (currPopup != null)
-        {
-            HideUI();
-        }
-        if (popupPrefab != null)
-        {
-            currPopup = Instantiate(popupPrefab);
-            currPopup.transform.SetParent(parent);
-        }
-    }
+    
 }
 
    

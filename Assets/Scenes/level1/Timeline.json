@@ -3,7 +3,7 @@
 		{
 			"id": "John Somebody",
 			"delay": {
-				"seconds": 4.4
+				"seconds": 0.0
 			},
 			"patient": {
 				"name": "John Somebody",

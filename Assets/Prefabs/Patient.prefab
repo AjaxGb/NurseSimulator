@@ -24,7 +24,7 @@ GameObject:
   - 23: {fileID: 23000012888150312}
   - 114: {fileID: 114000013937286440}
   - 195: {fileID: 195000011240358192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Patient
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa53ab51c273f3848a9c7b0a7a846800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popupPrefab: {fileID: 0}
+  popupPrefab: {fileID: 224000012026279340, guid: 5204ec808c6a9b54ab7d4f832586b506,
+    type: 2}
   follow: 0
   destination: {x: 0, y: 0, z: 0}
 --- !u!136 &136000010629347924

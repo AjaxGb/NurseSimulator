@@ -15,6 +15,7 @@ public class ItemType : ScriptableObject {
 	public static ItemType FromName(string name) {
 		ItemType type;
 		nameMap.TryGetValue(name, out type);
+        if (type == null) Debug.LogWarning(name + " is not an ItemType");
 		return type;
 	}
 
