@@ -37,6 +37,7 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
     public PatientData data { get; private set; }
 	public CheckAvailable room;
 	private NavMeshAgent navAgent;
+	private Animator anim;
 
     public bool follow = false;
 	public Vector3 destination;
@@ -54,6 +55,7 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
 	public void Setup(PatientData data) {
 		this.data = data;
 		navAgent = GetComponent<NavMeshAgent>();
+		anim = GetComponent<Animator>();
 		if (data.skinMaterial != null) GetComponentInChildren<Renderer>().material = data.skinMaterial;
 		destination = WaitingRoomOrganizer.inst.OccupyUnoccupied();      
     }
@@ -68,6 +70,15 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
         {
             navAgent.destination = destination;
         }
+
+		if (navAgent.desiredVelocity.sqrMagnitude > 0.01) {
+			anim.SetBool("Walking", true);
+		} else {
+			anim.SetBool("Walking", false);
+			Vector3 lookPos = navAgent.destination - transform.position;
+			lookPos.y = 0;
+			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookPos), Time.deltaTime * 2);
+		}
 	}
 
 	void OnDestroy() {
