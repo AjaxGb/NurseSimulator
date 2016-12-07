@@ -1,4 +1,3 @@
-// DAY 1
 {
 	"spawns": [
 		{
@@ -7,7 +6,9 @@
 			},
 			"patient": {
 				"name": "John Somebody",
-				"condition": "Sinus Infection",
+				"condition": "Infected Wound",
+				"death_time": 100.0,
+				"treatment_time": 10.0,
 				"required_items": [
 					"Antibiotic"
 				]
@@ -19,37 +20,9 @@
 			},
 			"patient": {
 				"name": "Alice",
-				"condition": "Asthma Attack",
-				"required_items": [
-					"Oxygen Tank",
-					"Inhalant"
-				]
-			}
-		}
-	]
-}
-// DAY 2
-{
-	"spawns": [
-		{
-			"delay": {
-				"seconds": 0.0
-			},
-			"patient": {
-				"name": "Jose ",
-				"condition": "Infected Gunshot",
-				"required_items": [
-					"Antibiotic"
-				]
-			}
-		},
-		{
-			"delay": {
-				"seconds": 3.0
-			},
-			"patient": {
-				"name": "Ryan Dunn",
-				"condition": "Toy Car Lodged in Rectum",
+				"condition": "Allergic Reaction",
+				"death_time": 100.0,
+				"treatment_time": 10.0,
 				"required_items": [
 					"Oxygen Tank",
 					"Inhalant"
