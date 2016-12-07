@@ -1,52 +1,59 @@
+// DAY 1
 {
 	"spawns": [
 		{
-			"id": "John Somebody",
 			"delay": {
 				"seconds": 0.0
 			},
 			"patient": {
 				"name": "John Somebody",
-				"condition": "Infected Wound",
+				"condition": "Sinus Infection",
 				"required_items": [
-					"Gauze",
-					"Binding",
-					"Antiseptic",
-					"Antibiotic",
-					"Scalpel",
-					"Stitches",
-					"Local Anesthetic"
-				],
-				"color": {
-					"r": 1.0
-				}
+					"Antibiotic"
+				]
 			}
 		},
 		{
-			"after": [
-				{
-					"event_id": "John Somebody",
-					"has": "ended"
-				}
-			],
 			"delay": {
-				"seconds": 2.4
+				"seconds": 60.0
 			},
 			"patient": {
 				"name": "Alice",
-				"condition": "Allergic Reaction",
+				"condition": "Asthma Attack",
 				"required_items": [
-					"Gauze",
-					"Binding",
-					"Antiseptic",
-					"Antibiotic",
-					"Scalpel",
-					"Stitches",
-					"Local Anesthetic"
-				],
-				"color": {
-					"g": 1.0
-				}
+					"Oxygen Tank",
+					"Inhalant"
+				]
+			}
+		}
+	]
+}
+// DAY 2
+{
+	"spawns": [
+		{
+			"delay": {
+				"seconds": 0.0
+			},
+			"patient": {
+				"name": "Jose ",
+				"condition": "Infected Gunshot",
+				"required_items": [
+					"Antibiotic"
+				]
+			}
+		},
+		{
+			"delay": {
+				"seconds": 3.0
+			},
+			"patient": {
+				"name": "Ryan Dunn",
+				"condition": "Toy Car Lodged in Rectum",
+				"required_items": [
+					"Oxygen Tank",
+					"Inhalant"
+				]
 			}
 		}
 	]
