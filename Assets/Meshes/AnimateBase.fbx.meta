@@ -155,6 +155,8 @@ ModelImporter:
     400144: ToeTap_Pivot
     400146: UpperBack_Cluster
     400148: UpperBack_CTRL
+    2300000: pCube5
+    3300000: pCube5
     4300000: pCube5
     7400000: Take 001
     9500000: //RootNode
@@ -217,7 +219,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
