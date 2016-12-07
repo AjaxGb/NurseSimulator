@@ -92,7 +92,8 @@ public class Timeline : MonoBehaviour {
 				Spawnpoint spawn = timeline.GetSpawnpoint(spawnpoint);
 				Patient p = Instantiate(timeline.patientPrefab);
 				p.transform.position = spawn.transform.position;
-				patient.skinMaterial = timeline.patientSkins[UnityEngine.Random.Range(0, timeline.patientSkins.Length)];
+				patient.skinMaterial = (timeline.patientSkins.Length == 0) ? null :
+					timeline.patientSkins[UnityEngine.Random.Range(0, timeline.patientSkins.Length)];
 				p.Setup(patient);
 				p.AddDespawnAction(() => timeline.EventEnded(this));
 			}
