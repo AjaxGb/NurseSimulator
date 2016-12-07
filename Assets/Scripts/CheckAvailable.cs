@@ -45,11 +45,11 @@ public class CheckAvailable : MonoBehaviour, IMouseOverUI {
             {
                 Destroy(guy.gameObject);
                 guy = null;
+                Treating = false;
 				if (t != null) {
 					t.text = "Available, just cured Patient";
 					t.color = new Color(0, 1, 0);
 				}
-                Treating = false;
             }
         }
     }
@@ -62,7 +62,8 @@ public class CheckAvailable : MonoBehaviour, IMouseOverUI {
         {
             if (InUse)
             {
-                t.text = "Requires Materials!\n";
+                t.text = guy.data.name + "\n";
+                t.text += guy.data.condition + " needs:\n";
                 foreach (var item in guy.data.requiredItemTypes)
                 {
                     t.text += item.name + "\n";
