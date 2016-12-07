@@ -12,7 +12,7 @@ public class ItemSource : MonoBehaviour, IMouseOverUI {
 	public void OnClick(int button = 0) {
 		if (itemType != null && Player.inst.inventory != null && (infiniteSource || amountLeft > 0)) {
 			if (button == 0) {
-				Player.inst.inventory.Add(itemType, 1);
+				Player.inst.inventory.AddCount(itemType, 1);
 			} else {
 				Player.inst.inventory.RemoveCount(itemType, 1);
 			}

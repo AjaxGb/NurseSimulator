@@ -7,6 +7,7 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour, IDictionary<ItemType, int> {
 
 	public ItemStack itemPrefab;
+	public int maxItems = 16;
 
 	private Dictionary<ItemType, ItemStack> items = new Dictionary<ItemType, ItemStack>();
 
@@ -29,19 +30,22 @@ public class InventoryManager : MonoBehaviour, IDictionary<ItemType, int> {
 		set {
 			if (value < 0) {
 				throw new ArgumentOutOfRangeException("Cannot be negative");
+			} else if (value + TotalCount > maxItems) {
+				throw new ArgumentException("Cannot have more than max items");
 			} else if (value == 0) {
 				items.Remove(key);
-			}
-			ItemStack stack;
-			if (items.TryGetValue(key, out stack)) {
-				TotalCount -= stack.Count;
-				stack.Count = value;
 			} else {
-				stack = Instantiate(itemPrefab).SetItem(key, value);
-				stack.transform.SetParent(this.transform);
-				items.Add(key, stack);
+				ItemStack stack;
+				if (items.TryGetValue(key, out stack)) {
+					TotalCount -= stack.Count;
+					stack.Count = value;
+				} else {
+					stack = Instantiate(itemPrefab).SetItem(key, value);
+					stack.transform.SetParent(this.transform);
+					items.Add(key, stack);
+				}
+				TotalCount += stack.Count;
 			}
-			TotalCount += stack.Count;
 		}
 	}
 
@@ -98,8 +102,17 @@ public class InventoryManager : MonoBehaviour, IDictionary<ItemType, int> {
 	}
 
 	public void Add(ItemType itemType, int count = 1) {
+		if (count + TotalCount > maxItems) {
+			throw new ArgumentException("Cannot have more than max items", "count");
+		}
+		AddCount(itemType, count);
+	}
+
+	public int AddCount(ItemType itemType, int count = 1) {
 		if (count < 0) {
 			throw new ArgumentOutOfRangeException("count", "Cannot be negative");
+		} else if (count + TotalCount > maxItems) {
+			count = maxItems - TotalCount;
 		}
 		ItemStack stack = null;
 		if (items.TryGetValue(itemType, out stack)) {
@@ -111,6 +124,7 @@ public class InventoryManager : MonoBehaviour, IDictionary<ItemType, int> {
 			items.Add(itemType, stack);
 		}
 		TotalCount += count;
+		return count;
 	}
 
 	/// <summary>
