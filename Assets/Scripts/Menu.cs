@@ -14,6 +14,16 @@ public class Menu : MonoBehaviour {
         Application.Quit();
     }
 
+    public void Title()
+    {
+        SceneManager.LoadScene("Main");
+    }
+
+    public void loadInst()
+    {
+        SceneManager.LoadScene("Instructions");
+    }
+
     // Use this for initialization
     void Start () {
 	
