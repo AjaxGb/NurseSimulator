@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 [Serializable]
 public class PatientData : ISerializationCallbackReceiver {
@@ -41,6 +42,7 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
 
     public bool follow = false;
 	public Vector3 destination;
+    public float DeathTimeLeft = 999f;
 
 	private ICollection<Action> _despawnActions;
 	public void AddDespawnAction(Action a) {
@@ -57,7 +59,8 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
 		navAgent = GetComponent<NavMeshAgent>();
 		anim = GetComponent<Animator>();
 		if (data.skinMaterial != null) GetComponentInChildren<Renderer>().material = data.skinMaterial;
-		destination = WaitingRoomOrganizer.inst.OccupyUnoccupied();      
+        destination = WaitingRoomOrganizer.inst.OccupyUnoccupied();
+        DeathTimeLeft = data.death_time;
     }
 
 	// Update is called once per frame
@@ -79,6 +82,22 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
 			lookPos.y = 0;
 			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookPos), Time.deltaTime * 2);
 		}
+
+        DeathTimeLeft -= Time.deltaTime;
+        if (DeathTimeLeft <= 0)
+        {
+            if (room != null)
+            {
+                Text t = null;
+                if (currPopup != null)
+                {
+                    t = room.currPopup.GetComponentInChildren<Text>();
+                }
+                room.guy = null;
+                t.text = "Available, Patient just died...";
+                t.color = new Color(0.4f, 0, 0);
+            }
+        }
 	}
 
 	void OnDestroy() {
@@ -87,6 +106,16 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
 			foreach (Action a in _despawnActions) a();
 		}
 	}
+
+    public void UpdateInfo()
+    {
+        if (currPopup == null) return;
+        Text t = currPopup.GetComponentInChildren<Text>();
+        t.text = "Name: " + data.name + "\n";
+        t.text += "Condition: " + data.condition + "\n";
+        t.color = new Color(0.2f, 0.6f, 1);
+    }
+
 
     public void ShowUI(Transform parent, Camera camera)
     {
@@ -98,6 +127,7 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
         {
             currPopup = Instantiate(popupPrefab);
             currPopup.transform.SetParent(parent);
+            UpdateInfo();
         }
     }
     public void UpdateUI(Camera camera, Vector3 point)

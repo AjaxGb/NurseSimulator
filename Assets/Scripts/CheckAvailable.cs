@@ -8,29 +8,37 @@ public class CheckAvailable : MonoBehaviour, IMouseOverUI {
     public Patient guy;
     public Transform bedLocation;
     private bool Treating = false;
-    private float timeLeft = 0f;
+    private float TreatingTimeLeft = 999f;
 
     public bool InUse
     {
         get { return guy != null; }
     }
     public RectTransform popupPrefab;
-    private RectTransform currPopup;
+    public RectTransform currPopup;
 
     public void Update()
     {
+        Text t = null;
+        if (currPopup != null)
+        {
+            t = currPopup.GetComponentInChildren<Text>();
+        }
         if (guy != null && guy.data.requiredItemTypes.Count <= 0 && !Treating)
         {
             Treating = true;
-
+            TreatingTimeLeft = guy.data.treatment_time;
+            t.text = "Operating on Patient";
+            t.color = new Color(1, 1, 0);
         }
         if (Treating)
         {
-            timeLeft -= Time.deltaTime;
-            if (timeLeft < 0)
+            TreatingTimeLeft -= Time.deltaTime;
+            if (TreatingTimeLeft <= 0)
             {
                 guy = null;
-                //TODO: SHOW PATIENT CURED SCREEN
+                t.text = "Available, just cured Patient";
+                t.color = new Color(0, 1, 0);
             }
         }
     }
