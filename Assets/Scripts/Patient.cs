@@ -34,10 +34,11 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
     private RectTransform currPopup;
 
     public PatientData data { get; private set; }
+	public CheckAvailable room;
 	private NavMeshAgent navAgent;
 
     public bool follow = false;
-	public Vector3 waitingRoomPos;
+	public Vector3 destination;
 
 	private ICollection<Action> _despawnActions;
 	public void AddDespawnAction(Action a) {
@@ -52,7 +53,7 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
 	public void Setup(PatientData data) {
 		this.data = data;
 		navAgent = GetComponent<NavMeshAgent>();
-		waitingRoomPos = WaitingRoomOrganizer.inst.OccupyUnoccupied();
+		destination = WaitingRoomOrganizer.inst.OccupyUnoccupied();
 	}
 
 	// Update is called once per frame
@@ -63,7 +64,7 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
         }
         else
         {
-            navAgent.destination = waitingRoomPos;
+            navAgent.destination = destination;
         }
 	}
 
@@ -104,13 +105,14 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
 
     public void OnClick(int button)
     {
+		if (room != null) return;
 		if (button == 0) {
 			follow = true;
-			WaitingRoomOrganizer.inst.SetOccupied(waitingRoomPos, false);
+			WaitingRoomOrganizer.inst.SetOccupied(destination, false);
 			Player.inst.escortee = this;
 		} else {
 			follow = false;
-			waitingRoomPos = WaitingRoomOrganizer.inst.OccupyUnoccupied();
+			destination = WaitingRoomOrganizer.inst.OccupyUnoccupied();
 			if (Player.inst.escortee == this) {
 				Player.inst.escortee = null;
 			}

@@ -6,6 +6,9 @@ using System;
 public class CheckAvailable : MonoBehaviour, IMouseOverUI {
     
     public Patient guy;
+    public Transform bedLocation;
+    private bool Treating = false;
+    private float timeLeft = 0f;
 
     public bool InUse
     {
@@ -16,9 +19,19 @@ public class CheckAvailable : MonoBehaviour, IMouseOverUI {
 
     public void Update()
     {
-        if (guy != null && guy.data.requiredItemTypes.Count <= 0)
+        if (guy != null && guy.data.requiredItemTypes.Count <= 0 && !Treating)
         {
-            // TODO: Show patient cured screen, new room available
+            Treating = true;
+
+        }
+        if (Treating)
+        {
+            timeLeft -= Time.deltaTime;
+            if (timeLeft < 0)
+            {
+                guy = null;
+                //TODO: SHOW PATIENT CURED SCREEN
+            }
         }
     }
 
@@ -80,8 +93,9 @@ public class CheckAvailable : MonoBehaviour, IMouseOverUI {
             guy.data.requiredItemTypes.RemoveAll(item => Player.inst.inventory.RemoveCount(item) > 0);
         } else if (Player.inst.escortee != null) {
             guy = Player.inst.escortee;
+			guy.room = this;
             guy.follow = false;
-			guy.waitingRoomPos = transform.position;
+			guy.destination = bedLocation.position;
             Player.inst.escortee = null;
         }
         UpdateText();
