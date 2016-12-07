@@ -1,13 +1,10 @@
 {
 	"spawns": [
 		{
-			"delay": {
-				"seconds": 0.0
-			},
 			"patient": {
-				"name": "John Somebody",
-				"condition": "Infected Wound",
-				"death_time": 100.0,
+				"name": "John Appleseed",
+				"condition": "Sinus Infection",
+				"death_time": 90.0,
 				"treatment_time": 10.0,
 				"required_items": [
 					"Antibiotic"
@@ -15,17 +12,439 @@
 			}
 		},
 		{
+			"id": "Day1",
 			"delay": {
 				"seconds": 60.0
 			},
 			"patient": {
 				"name": "Alice",
-				"condition": "Allergic Reaction",
-				"death_time": 100.0,
+				"condition": "Asthma Attack",
+				"death_time": 120.0,
 				"treatment_time": 10.0,
 				"required_items": [
 					"Oxygen Tank",
 					"Inhalant"
+				]
+			}
+		},
+		{
+			"after": [
+				{
+					"event_id": "Day1",
+					"has": "ended"
+				}
+			],
+			"patient": {
+				"name": "Jose Cuerpo",
+				"condition": "Infected Gunshot Wound",
+				"death_time": 75.0,
+				"treatment_time": 22.0,
+				"required_items": [
+					"Blood",
+					"Antibiotic",
+					"Scalpel",
+					"Gauze",
+					"Binding",
+					"X-Ray Vest"
+				]
+			}
+		},
+		{
+			"after": [
+				{
+					"event_id": "Day1",
+					"has": "ended"
+				}
+			],
+			"delay": {
+				"seconds": 3.0
+			},
+			"patient": {
+				"name": "Ryan Dunn",
+				"condition": "Toy Car Lodged in Rectum",
+				"death_time": 75.0,
+				"treatment_time": 25.0,
+				"required_items": [
+					"Binding",
+					"Muscle Relaxant",
+					"Local Anesthetic"
+				]
+			}
+		},
+		{
+			"after": [
+				{
+					"event_id": "Day1",
+					"has": "ended"
+				}
+			],
+			"delay": {
+				"seconds": 60.0
+			},
+			"patient": {
+				"name": "Jerry McFierce",
+				"condition": "Diabetic Shock",
+				"death_time": 75.0,
+				"treatment_time": 10.0,
+				"required_items": [
+					"Glucose",
+					"Saline"
+				]
+			}
+		},
+		{
+			"after": [
+				{
+					"event_id": "Day1",
+					"has": "ended"
+				}
+			],
+			"delay": {
+				"seconds": 80.0
+			},
+			"patient": {
+				"name": "Jerry McFierce",
+				"condition": "Heroine Overdose",
+				"death_time": 40.0,
+				"treatment_time": 55.0,
+				"required_items": [
+					"Oxygen Tank",
+					"Methadone"
+				]
+			}
+		},
+		{
+			"id": "Day2",
+			"after": [
+				{
+					"event_id": "Day1",
+					"has": "ended"
+				}
+			],
+			"delay": {
+				"seconds": 82.0
+			},
+			"patient": {
+				"name": "Donna McFierce",
+				"condition": "Heroine Overdose",
+				"death_time": 40.0,
+				"treatment_time": 55.0,
+				"required_items": [
+					"Oxygen Tank",
+					"Methadone"
+				]
+			}
+		},
+		{
+			"after": [
+				{
+					"event_id": "Day2",
+					"has": "ended"
+				}
+			],
+			"patient": {
+				"name": "Michael Johnson",
+				"condition": "Minor Wrist Fracture",
+				"death_time": 200.0,
+				"treatment_time": 35.0,
+				"required_items": [
+					"Plaster",
+					"Sling",
+					"X-Ray Vest",
+					"Binding"
+				]
+			}
+		},
+		{
+			"after": [
+				{
+					"event_id": "Day2",
+					"has": "ended"
+				}
+			],
+			"delay": {
+				"seconds": 30.0
+			},
+			"patient": {
+				"name": "Kendra Johnson",
+				"condition": "Lego Brick Lodged in Nose",
+				"death_time": 200.0,
+				"treatment_time": 50.0,
+				"required_items": [
+					"Muscle Relaxant",
+					"Binding",
+					"Local Anesthetic"
+				]
+			}
+		},
+		{
+			"after": [
+				{
+					"event_id": "Day2",
+					"has": "ended"
+				}
+			],
+			"delay": {
+				"seconds": 32.0
+			},
+			"patient": {
+				"name": "Michael Jukeson",
+				"condition": "Snapped Pelvis",
+				"death_time": 70.0,
+				"treatment_time": 45.0,
+				"required_items": [
+					"Scalpel",
+					"Forceps",
+					"Total Anesthetic",
+					"Stitches",
+					"Pins",
+					"X-Ray Vest",
+					"Antiseptic",
+					"Plaster",
+					"Gauze",
+					"Binding"
+				]
+			}
+		},
+		{
+			"id": "Day3",
+			"after": [
+				{
+					"event_id": "Day2",
+					"has": "ended"
+				}
+			],
+			"delay": {
+				"seconds": 75.0
+			},
+			"patient": {
+				"name": "Peter Pander",
+				"condition": "Cranial Trauma",
+				"death_time": 30.0,
+				"treatment_time": 20.0,
+				"required_items": [
+					"X-Ray Vest",
+					"Gauze",
+					"Binding",
+					"Scalpel",
+					"Antiseptic",
+					"Total Anesthetic"
+				]
+			}
+		},
+		{
+			"after": [
+				{
+					"event_id": "Day3",
+					"has": "ended"
+				}
+			],
+			"patient": {
+				"name": "Naba Nadels",
+				"condition": "Allergic Reaction to Nuts",
+				"death_time": 30.0,
+				"treatment_time": 15.0,
+				"required_items": [
+					"Oxygen Tank",
+					"Antihistamine",
+					"Steroids",
+					"Saline"
+				]
+			}
+		},
+		{
+			"after": [
+				{
+					"event_id": "Day3",
+					"has": "ended"
+				}
+			],
+			"delay": {
+				"seconds": 30.0
+			},
+			"patient": {
+				"name": "Lucky Luke",
+				"condition": "Deep Lacerations to Stomach",
+				"death_time": 20.0,
+				"treatment_time": 30.0,
+				"required_items": [
+					"Oxygen Tank",
+					"Stitches",
+					"Blood",
+					"Antiseptic",
+					"Binding",
+					"Gauze",
+					"Scalpel"
+				]
+			}
+		},
+		{
+			"after": [
+				{
+					"event_id": "Day3",
+					"has": "ended"
+				}
+			],
+			"delay": {
+				"seconds": 32.0
+			},
+			"patient": {
+				"name": "Granada Goldenstein",
+				"condition": "Embedded Shrapnel",
+				"death_time": 25.0,
+				"treatment_time": 30.0,
+				"required_items": [
+					"Oxygen Tank",
+					"Stitches",
+					"Blood",
+					"Antibiotic",
+					"Binding",
+					"Gauze",
+					"Scalpel"
+				]
+			}
+		},
+		{
+			"id": "Day4",
+			"after": [
+				{
+					"event_id": "Day3",
+					"has": "ended"
+				}
+			],
+			"delay": {
+				"seconds": 66.0
+			},
+			"patient": {
+				"name": "Sandusky Clausane",
+				"condition": "Stroke",
+				"death_time": 25.0,
+				"treatment_time": 30.0,
+				"required_items": [
+					"Anticoagulant",
+					"Scalpel",
+					"Gauze",
+					"Binding",
+					"Forceps",
+					"Saline Bag",
+					"Total Anesthetic"
+				]
+			}
+		},
+		{
+			"after": [
+				{
+					"event_id": "Day4",
+					"has": "ended"
+				}
+			],
+			"patient": {
+				"name": "Suzanna Watershed",
+				"condition": "Ribcage Fracture",
+				"death_time": 75.0,
+				"treatment_time": 30.0,
+				"required_items": [
+					"Oxygen",
+					"Scalpel",
+					"Forceps",
+					"Anesthetic",
+					"Stitches",
+					"Pins",
+					"X-Ray Vest",
+					"Antiseptic",
+					"Bracing",
+					"Gauze",
+					"Binding",
+					"Blood"
+				]
+			}
+		},
+		{
+			"after": [
+				{
+					"event_id": "Day4",
+					"has": "ended"
+				}
+			],
+			"delay": {
+				"seconds": 2.0
+			},
+			"patient": {
+				"name": "Tonya Taperman",
+				"condition": "Minor Ankle Fracture",
+				"death_time": 90.0,
+				"treatment_time": 25.0,
+				"required_items": [
+					"Plaster",
+					"X-Ray Vest",
+					"Binding"
+				]
+			}
+		},
+		{
+			"after": [
+				{
+					"event_id": "Day4",
+					"has": "ended"
+				}
+			],
+			"delay": {
+				"seconds": 45.0
+			},
+			"patient": {
+				"name": "Jay Zimmer",
+				"condition": "Gunshot Wound in Skull",
+				"death_time": 30.0,
+				"treatment_time": 42.0,
+				"required_items": [
+					"Blood",
+					"Antiseptic",
+					"Scalpel",
+					"Gauze",
+					"Binding",
+					"X-Ray Vest"
+				]
+			}
+		},
+		{
+			"after": [
+				{
+					"event_id": "Day4",
+					"has": "ended"
+				}
+			],
+			"delay": {
+				"seconds": 45.0
+			},
+			"patient": {
+				"name": "Melissa Banana",
+				"condition": "Xanax Overdose",
+				"death_time": 30.0,
+				"treatment_time": 28.0,
+				"required_items": [
+					"Oxygen Tank",
+					"Methadone"
+				]
+			}
+		},
+		{
+			"after": [
+				{
+					"event_id": "Day4",
+					"has": "ended"
+				}
+			],
+			"delay": {
+				"seconds": 75.0
+			},
+			"patient": {
+				"name": "Ovie Menderson",
+				"condition": "Diabetic Shock",
+				"death_time": 45.0,
+				"treatment_time": 28.0,
+				"required_items": [
+					"Insulin",
+					"Saline"
 				]
 			}
 		}

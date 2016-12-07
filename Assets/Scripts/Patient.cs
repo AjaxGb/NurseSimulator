@@ -97,6 +97,7 @@ public class Patient : MonoBehaviour, IDespawnEvents, IMouseOverUI {
                 t.text = "Available, Patient just died...";
                 t.color = new Color(0.4f, 0, 0);
             }
+            Destroy(this.gameObject);
         }
 	}
 
