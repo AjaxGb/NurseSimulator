@@ -1,0 +1,408 @@
+fileFormatVersion: 2
+guid: ee52c67e92e7a934f8392e69e0bda793
+timeCreated: 1481130833
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Back1
+    100002: Back2
+    100004: Back3
+    100006: Back4
+    100008: Back5
+    100010: Back6
+    100012: Back7
+    100014: Back8
+    100016: Back_IK
+    100018: BackBend_CTRL
+    100020: Body_CTRL
+    100022: bottom
+    100024: IK_BackCurve
+    100026: L_Ankle
+    100028: L_Ankle_IK
+    100030: L_Ankle_Pivot
+    100032: L_Arm_IK
+    100034: L_Ball
+    100036: L_Ball_IK
+    100038: L_Clavicle
+    100040: L_Clavicle_CTRL
+    100042: L_Elbow
+    100044: L_elbow_CTRL
+    100046: L_Fingers
+    100048: L_Foot_CTRL
+    100050: L_Forearm
+    100052: L_Hand_CTRL
+    100054: L_Hand_Offset
+    100056: L_HeelPeel_Pivot
+    100058: L_Hip
+    100060: L_Knee
+    100062: L_KneeCTRL
+    100064: L_Shoulder
+    100066: L_SwivelPivot
+    100068: L_Toe
+    100070: L_Toe_IK
+    100072: L_ToePivot
+    100074: L_ToeTip_Pivot
+    100076: L_Wrist
+    100078: LowerBack_Cluster
+    100080: LowerBack_CTRL
+    100082: Master_CTRL
+    100084: pCube5
+    100086: R_Ankle
+    100088: R_Ankle_IK
+    100090: R_Ankle_Pivot
+    100092: R_Arm_IK
+    100094: R_Ball
+    100096: R_Ball_IK
+    100098: R_Clav_CTRL
+    100100: R_Clavicle
+    100102: R_Elbow
+    100104: R_Elbow_CTRL
+    100106: R_Fingers
+    100108: R_Foot_CTRL
+    100110: R_Forearm
+    100112: R_Hand_CTRL
+    100114: R_Hand_Offset
+    100116: R_HeelPeel_Pivot
+    100118: R_Hip
+    100120: R_Knee
+    100122: R_Knee_CTRL
+    100124: R_Shoulder
+    100126: R_Swivel_Pivot
+    100128: R_Toe
+    100130: R_Toe_IK
+    100132: R_ToeTip_Pivot
+    100134: R_Wrist
+    100136: Rig_Grp
+    100138: Root
+    100140: Skeleton_Grp
+    100142: ToeTap_Pivot
+    100144: UpperBack_Cluster
+    100146: UpperBack_CTRL
+    100148: //RootNode
+    400000: Back1
+    400002: Back2
+    400004: Back3
+    400006: Back4
+    400008: Back5
+    400010: Back6
+    400012: Back7
+    400014: Back8
+    400016: Back_IK
+    400018: BackBend_CTRL
+    400020: Body_CTRL
+    400022: bottom
+    400024: IK_BackCurve
+    400026: L_Ankle
+    400028: L_Ankle_IK
+    400030: L_Ankle_Pivot
+    400032: L_Arm_IK
+    400034: L_Ball
+    400036: L_Ball_IK
+    400038: L_Clavicle
+    400040: L_Clavicle_CTRL
+    400042: L_Elbow
+    400044: L_elbow_CTRL
+    400046: L_Fingers
+    400048: L_Foot_CTRL
+    400050: L_Forearm
+    400052: L_Hand_CTRL
+    400054: L_Hand_Offset
+    400056: L_HeelPeel_Pivot
+    400058: L_Hip
+    400060: L_Knee
+    400062: L_KneeCTRL
+    400064: L_Shoulder
+    400066: L_SwivelPivot
+    400068: L_Toe
+    400070: L_Toe_IK
+    400072: L_ToePivot
+    400074: L_ToeTip_Pivot
+    400076: L_Wrist
+    400078: LowerBack_Cluster
+    400080: LowerBack_CTRL
+    400082: Master_CTRL
+    400084: pCube5
+    400086: R_Ankle
+    400088: R_Ankle_IK
+    400090: R_Ankle_Pivot
+    400092: R_Arm_IK
+    400094: R_Ball
+    400096: R_Ball_IK
+    400098: R_Clav_CTRL
+    400100: R_Clavicle
+    400102: R_Elbow
+    400104: R_Elbow_CTRL
+    400106: R_Fingers
+    400108: R_Foot_CTRL
+    400110: R_Forearm
+    400112: R_Hand_CTRL
+    400114: R_Hand_Offset
+    400116: R_HeelPeel_Pivot
+    400118: R_Hip
+    400120: R_Knee
+    400122: R_Knee_CTRL
+    400124: R_Shoulder
+    400126: R_Swivel_Pivot
+    400128: R_Toe
+    400130: R_Toe_IK
+    400132: R_ToeTip_Pivot
+    400134: R_Wrist
+    400136: Rig_Grp
+    400138: Root
+    400140: Skeleton_Grp
+    400142: ToeTap_Pivot
+    400144: UpperBack_Cluster
+    400146: UpperBack_CTRL
+    400148: //RootNode
+    4300000: pCube5
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: pCube5
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: '
+
+      Imported file ''walk'' conversion failed: Required human bone ''Head'' not found
+
+
+'
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bottom
+        weight: 1
+      - path: L_Arm_IK
+        weight: 1
+      - path: Master_CTRL
+        weight: 1
+      - path: Master_CTRL/Body_CTRL
+        weight: 1
+      - path: Master_CTRL/Body_CTRL/BackBend_CTRL
+        weight: 1
+      - path: Master_CTRL/Body_CTRL/BackBend_CTRL/UpperBack_CTRL
+        weight: 1
+      - path: Master_CTRL/Body_CTRL/BackBend_CTRL/UpperBack_CTRL/L_Clavicle_CTRL
+        weight: 1
+      - path: Master_CTRL/Body_CTRL/BackBend_CTRL/UpperBack_CTRL/R_Clav_CTRL
+        weight: 1
+      - path: Master_CTRL/Body_CTRL/BackBend_CTRL/UpperBack_CTRL/UpperBack_Cluster
+        weight: 1
+      - path: Master_CTRL/Body_CTRL/LowerBack_CTRL
+        weight: 1
+      - path: Master_CTRL/Body_CTRL/LowerBack_CTRL/LowerBack_Cluster
+        weight: 1
+      - path: Master_CTRL/L_elbow_CTRL
+        weight: 1
+      - path: Master_CTRL/L_Foot_CTRL
+        weight: 1
+      - path: Master_CTRL/L_Foot_CTRL/L_Ankle_Pivot
+        weight: 1
+      - path: Master_CTRL/L_Foot_CTRL/L_Ankle_Pivot/L_ToeTip_Pivot
+        weight: 1
+      - path: Master_CTRL/L_Foot_CTRL/L_Ankle_Pivot/L_ToeTip_Pivot/L_SwivelPivot
+        weight: 1
+      - path: Master_CTRL/L_Foot_CTRL/L_Ankle_Pivot/L_ToeTip_Pivot/L_SwivelPivot/L_HeelPeel_Pivot
+        weight: 1
+      - path: Master_CTRL/L_Foot_CTRL/L_Ankle_Pivot/L_ToeTip_Pivot/L_SwivelPivot/L_HeelPeel_Pivot/L_Ankle_IK
+        weight: 1
+      - path: Master_CTRL/L_Foot_CTRL/L_Ankle_Pivot/L_ToeTip_Pivot/L_SwivelPivot/L_ToePivot
+        weight: 1
+      - path: Master_CTRL/L_Foot_CTRL/L_Ankle_Pivot/L_ToeTip_Pivot/L_SwivelPivot/L_ToePivot/L_Ball_IK
+        weight: 1
+      - path: Master_CTRL/L_Foot_CTRL/L_Ankle_Pivot/L_ToeTip_Pivot/L_SwivelPivot/L_ToePivot/L_Toe_IK
+        weight: 1
+      - path: Master_CTRL/L_Foot_CTRL/L_KneeCTRL
+        weight: 1
+      - path: Master_CTRL/L_Hand_Offset
+        weight: 1
+      - path: Master_CTRL/L_Hand_Offset/L_Hand_CTRL
+        weight: 1
+      - path: Master_CTRL/R_Elbow_CTRL
+        weight: 1
+      - path: Master_CTRL/R_Foot_CTRL
+        weight: 1
+      - path: Master_CTRL/R_Foot_CTRL/R_Ankle_Pivot
+        weight: 1
+      - path: Master_CTRL/R_Foot_CTRL/R_Ankle_Pivot/R_ToeTip_Pivot
+        weight: 1
+      - path: Master_CTRL/R_Foot_CTRL/R_Ankle_Pivot/R_ToeTip_Pivot/R_Swivel_Pivot
+        weight: 1
+      - path: Master_CTRL/R_Foot_CTRL/R_Ankle_Pivot/R_ToeTip_Pivot/R_Swivel_Pivot/R_HeelPeel_Pivot
+        weight: 1
+      - path: Master_CTRL/R_Foot_CTRL/R_Ankle_Pivot/R_ToeTip_Pivot/R_Swivel_Pivot/R_HeelPeel_Pivot/R_Ankle_IK
+        weight: 1
+      - path: Master_CTRL/R_Foot_CTRL/R_Ankle_Pivot/R_ToeTip_Pivot/R_Swivel_Pivot/ToeTap_Pivot
+        weight: 1
+      - path: Master_CTRL/R_Foot_CTRL/R_Ankle_Pivot/R_ToeTip_Pivot/R_Swivel_Pivot/ToeTap_Pivot/R_Ball_IK
+        weight: 1
+      - path: Master_CTRL/R_Foot_CTRL/R_Ankle_Pivot/R_ToeTip_Pivot/R_Swivel_Pivot/ToeTap_Pivot/R_Toe_IK
+        weight: 1
+      - path: Master_CTRL/R_Foot_CTRL/R_Knee_CTRL
+        weight: 1
+      - path: Master_CTRL/R_Hand_Offset
+        weight: 1
+      - path: Master_CTRL/R_Hand_Offset/R_Hand_CTRL
+        weight: 1
+      - path: pCube5
+        weight: 1
+      - path: R_Arm_IK
+        weight: 1
+      - path: Rig_Grp
+        weight: 1
+      - path: Rig_Grp/Back_IK
+        weight: 1
+      - path: Rig_Grp/IK_BackCurve
+        weight: 1
+      - path: Skeleton_Grp
+        weight: 1
+      - path: Skeleton_Grp/Root
+        weight: 1
+      - path: Skeleton_Grp/Root/Back1
+        weight: 1
+      - path: Skeleton_Grp/Root/Back1/Back2
+        weight: 1
+      - path: Skeleton_Grp/Root/Back1/Back2/Back3
+        weight: 1
+      - path: Skeleton_Grp/Root/Back1/Back2/Back3/Back4
+        weight: 1
+      - path: Skeleton_Grp/Root/Back1/Back2/Back3/Back4/Back5
+        weight: 1
+      - path: Skeleton_Grp/Root/Back1/Back2/Back3/Back4/Back5/Back6
+        weight: 1
+      - path: Skeleton_Grp/Root/Back1/Back2/Back3/Back4/Back5/Back6/Back7
+        weight: 1
+      - path: Skeleton_Grp/Root/Back1/Back2/Back3/Back4/Back5/Back6/Back7/Back8
+        weight: 1
+      - path: Skeleton_Grp/Root/Back1/Back2/Back3/Back4/Back5/Back6/Back7/L_Clavicle
+        weight: 1
+      - path: Skeleton_Grp/Root/Back1/Back2/Back3/Back4/Back5/Back6/Back7/L_Clavicle/L_Shoulder
+        weight: 1
+      - path: Skeleton_Grp/Root/Back1/Back2/Back3/Back4/Back5/Back6/Back7/L_Clavicle/L_Shoulder/L_Elbow
+        weight: 1
+      - path: Skeleton_Grp/Root/Back1/Back2/Back3/Back4/Back5/Back6/Back7/L_Clavicle/L_Shoulder/L_Elbow/L_Forearm
+        weight: 1
+      - path: Skeleton_Grp/Root/Back1/Back2/Back3/Back4/Back5/Back6/Back7/L_Clavicle/L_Shoulder/L_Elbow/L_Forearm/L_Wrist
+        weight: 1
+      - path: Skeleton_Grp/Root/Back1/Back2/Back3/Back4/Back5/Back6/Back7/L_Clavicle/L_Shoulder/L_Elbow/L_Forearm/L_Wrist/L_Fingers
+        weight: 1
+      - path: Skeleton_Grp/Root/Back1/Back2/Back3/Back4/Back5/Back6/Back7/R_Clavicle
+        weight: 1
+      - path: Skeleton_Grp/Root/Back1/Back2/Back3/Back4/Back5/Back6/Back7/R_Clavicle/R_Shoulder
+        weight: 1
+      - path: Skeleton_Grp/Root/Back1/Back2/Back3/Back4/Back5/Back6/Back7/R_Clavicle/R_Shoulder/R_Elbow
+        weight: 1
+      - path: Skeleton_Grp/Root/Back1/Back2/Back3/Back4/Back5/Back6/Back7/R_Clavicle/R_Shoulder/R_Elbow/R_Forearm
+        weight: 1
+      - path: Skeleton_Grp/Root/Back1/Back2/Back3/Back4/Back5/Back6/Back7/R_Clavicle/R_Shoulder/R_Elbow/R_Forearm/R_Wrist
+        weight: 1
+      - path: Skeleton_Grp/Root/Back1/Back2/Back3/Back4/Back5/Back6/Back7/R_Clavicle/R_Shoulder/R_Elbow/R_Forearm/R_Wrist/R_Fingers
+        weight: 1
+      - path: Skeleton_Grp/Root/L_Hip
+        weight: 1
+      - path: Skeleton_Grp/Root/L_Hip/L_Knee
+        weight: 1
+      - path: Skeleton_Grp/Root/L_Hip/L_Knee/L_Ankle
+        weight: 1
+      - path: Skeleton_Grp/Root/L_Hip/L_Knee/L_Ankle/L_Ball
+        weight: 1
+      - path: Skeleton_Grp/Root/L_Hip/L_Knee/L_Ankle/L_Ball/L_Toe
+        weight: 1
+      - path: Skeleton_Grp/Root/R_Hip
+        weight: 1
+      - path: Skeleton_Grp/Root/R_Hip/R_Knee
+        weight: 1
+      - path: Skeleton_Grp/Root/R_Hip/R_Knee/R_Ankle
+        weight: 1
+      - path: Skeleton_Grp/Root/R_Hip/R_Knee/R_Ankle/R_Ball
+        weight: 1
+      - path: Skeleton_Grp/Root/R_Hip/R_Knee/R_Ankle/R_Ball/R_Toe
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0.96
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
